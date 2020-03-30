@@ -9,43 +9,6 @@
             <link rel='stylesheet' href='stil.css'>
 
 		
-<script>
-$(document).ready(function(){
-
-    $("#kategorije_meni").hide(); //na pocetku
-	$("#moderator_meni").hide(); //na pocetku
-
-  $("a[id='trening_link']").click(function(){ //klikom na trening 
-    $("#osnovni_meni").hide();
-	
-    $("#kategorije_meni").fadeToggle("slow");	
-  });  
-  
-  
- $("a[id='moderator_link']").click(function(){ //klikom na trening 
-    $("#osnovni_meni").hide();
-    $("#moderator_meni").fadeToggle("slow");	
-  });  
-  
-  
-  
-  
-  
- $("a[id='nazad']").click(function(){ // vrati osnovni_meni
-	 $("#kategorije_meni").hide();
-	 $("#moderator_meni").hide();
-
-   $("#osnovni_meni").show();
-  });
-  
- 
-});
-
-
-
-
-</script>
-
 </head>
 <body>
 
@@ -67,70 +30,17 @@ $(document).ready(function(){
                     <br>
                     <br>
                     
-                    <a href='#' class ='linkovi' id='trening_link'>TRENING</a>
-                    <br>
-                    
-                    <a href='takmicenje.html' class='linkovi'>TAKMICENJE</a>
-                    <br>
-                    <a href='istorijaRezultata.html' class='linkovi'>REZULTATI</a>
-                    <br>
-                    <a href='rang.html' class='linkovi'>RANG LISTA</a>
-                    <br>
-					 <a href='#' class='linkovi' id = "moderator_link">MODERATOR</a>
-                    <br>
-                    <a href='index.html' class='linkovi'>ODJAVA</a>
-                    <br>
-                </div>
-				 <div class='col-sm-5 text-center ' id='kategorije_meni'>
-				    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <a href='takmicenje.html' class='linkovi' id="biologija">BIOLOGIJA</a>
-                    <br>
-                    <a href='takmicenje.html ' class='linkovi' id="istorija">ISTORIJA</a>
-                    <br>
-                    <a href='takmicenje.html' class='linkovi' id="geografija">GEOGRAFIJA</a>
-                    <br>
-                    <a href='takmicenje.html' class='linkovi' id="matematika">PRIRODNE NAUKE</a>
-                    <br>
-                    <a href='takmicenje.html' class='linkovi' id="muzika">MUZIKA</a>
-                    <br>
-					<a href='takmicenje.html' class='linkovi' id="umetnost">UMETNOST</a>
-				    <br>
-					
-					  <a href='takmicenje.html' class='linkovi' id="sport">SPORT</a>
-                    <br>
-					
-					  <a href='takmicenje.html' class='linkovi' id="filmovi">FILMOVI</a>
-                    <br>
-					  <a href='takmicenje.html' class='linkovi' id="serije">SERIJE</a>
-                    <br>
-					<a href='#' class='linkovi' id="nazad">Nazad </a>
-
-                </div>
-				
-				 <div class='col-sm-5 text-center ' id='moderator_meni'>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    
                     <a href='#' class='linkovi' id="dodaj_pitanje_link">Dodaj pitanje </a>
                     <br>
                    
 				    <a href='#' class='linkovi' id="ukloni_pitanje_link">Ukloni pitanje </a>
                     <br>
-                    
-					<a href='#' class='linkovi' id="nazad">Nazad </a>
-
+                  
+                    <a href='index.html' class='linkovi'>ODJAVA</a>
+                    <br>
                 </div>
 				
-				
+			
                 <div class='col-sm-4' style = "color: white;">
                     <br>
 					<br>
@@ -181,15 +91,8 @@ $(document).ready(function(){
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
             <div class="form-group">
-              <label for="kategorije_select"><span class="glyphicon glyphicon-th-list"></span> Izaberite kategoriju:</label>
-                  <select class="form-control" id="kategorije_select">
-                  <option>Biologija</option>
-                  <option>Istorija</option>
-				  <option>Geografija</option>
-                  <option>Matematika</option>
-                  <option>Muzika</option>
-				  <option>Umetnost</option>
-                  </select>
+              <label><span class="glyphicon glyphicon-th-list"></span> Moderator za oblast: istorija </label>
+                
             </div>
 			
 	 
@@ -249,15 +152,8 @@ $(document).ready(function(){
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
             <div class="form-group">
-              <label for="kategorije_select"><span class="glyphicon glyphicon-th-list"></span> Izaberite kategoriju:</label>
-                  <select class="form-control" id="kategorije_select">
-                  <option>Biologija</option>
-                  <option>Istorija</option>
-				  <option>Geografija</option>
-                  <option>Matematika</option>
-                  <option>Muzika</option>
-				  <option>Umetnost</option>
-                  </select>
+              <label><span class="glyphicon glyphicon-th-list"></span> Moderator za oblast : istorija</label>
+                 
             </div>
 			
 	 

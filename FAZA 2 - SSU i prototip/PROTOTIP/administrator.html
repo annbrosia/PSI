@@ -8,41 +8,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
           <link rel='stylesheet' href='stil.css'>
 
-		
-<script>
-$(document).ready(function(){
 
-    $("#kategorije_meni").hide(); //na pocetku
-	$("#admin_meni").hide(); //na pocetku
-
-  $("a[id='trening_link']").click(function(){ //klikom na trening 
-    $("#osnovni_meni").hide();
-	
-    $("#kategorije_meni").fadeToggle("slow");	
-  });  
-  
-  
- $("a[id='admin_link']").click(function(){ //klikom na trening 
-    $("#osnovni_meni").hide();
-    $("#admin_meni").fadeToggle("slow");	
-  });  
-  
-  
-  
-  
-  
- $("a[id='nazad']").click(function(){ // vrati osnovni_meni
-	 $("#kategorije_meni").hide();
-	 $("#admin_meni").hide();
-
-   $("#osnovni_meni").show();
-  });
-  
- 
-});
-
-
-</script>
 
  
 </head>
@@ -71,61 +37,9 @@ $(document).ready(function(){
                     <br>
                     <br>
                     
-                    <a href='#' class ='linkovi' id='trening_link'>TRENING</a>
-                    <br>
-                    
-                    <a href='takmicenje.html ' class='linkovi' id='m2'>TAKMICENJE</a>
-                    <br>
-                    <a href='istorijaRezultata.html' class='linkovi' id='m3'>REZULTATI</a>
-                    <br>
                     <a href='rang.html' class='linkovi' id='m3' >RANG LISTA</a>
                     <br>
-					 <a href='#' class='linkovi' id = "admin_link"  >ADMINISTRATOR</a>
-                    <br>
-                    <a href='index.html' class='linkovi' id='m5' >ODJAVA</a>
-                    <br>
-                </div>
-				 <div class='col-sm-5 text-center ' id='kategorije_meni'>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    
-                    <a href='takmicenje.html' class='linkovi' id="biologija">BIOLOGIJA</a>
-                    <br>
-                    <a href='takmicenje.html ' class='linkovi' id="istorija">ISTORIJA</a>
-                    <br>
-                    <a href='takmicenje.html' class='linkovi' id="geografija">GEOGRAFIJA</a>
-                    <br>
-                    <a href='takmicenje.html' class='linkovi' id="matematika">PRIRODNE NAUKE</a>
-                    <br>
-                    <a href='takmicenje.html' class='linkovi' id="muzika">MUZIKA</a>
-                    <br>
-					<a href='takmicenje.html' class='linkovi' id="umetnost">UMETNOST</a>
-				    <br>
-					
-					  <a href='takmicenje.html' class='linkovi' id="sport">SPORT</a>
-                    <br>
-					
-					  <a href='takmicenje.html' class='linkovi' id="filmovi">FILMOVI</a>
-                    <br>
-					  <a href='takmicenje.html' class='linkovi' id="serije">SERIJE</a>
-                    <br>
-					<a href='#' class='linkovi' id="nazad">Nazad </a>
-
-                </div>
-				
-				 <div class='col-sm-5 text-center ' id='admin_meni'>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    
-                    <a href='#' class='linkovi' id="registruj_moderatora_link">Registruj moderatora</a>
+				    <a href='#' class='linkovi' id="registruj_moderatora_link">Registruj moderatora</a>
                     <br>
                     <a href='#' class='linkovi' id="ukloni_moderatora_link">Ukloni moderatora</a>
                     <br>
@@ -133,9 +47,9 @@ $(document).ready(function(){
                     <br>
                     <a href='#' class='linkovi' id="ukloni_korisnika_link">Ukloni korisnika</a>
                     <br>
-                    
-					<a href='#' class='linkovi' id="nazad">Nazad </a>
-
+	
+                    <a href='index.html' class='linkovi' id='m5' >ODJAVA</a>
+                    <br>
                 </div>
 				
 				
@@ -190,12 +104,12 @@ $(document).ready(function(){
           <form role="form">
             <div class="form-group">
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Korisnicko ime:</label>
-              <input type="text" class="form-control" id="usrname" placeholder="Unesite korisnicko ime">
             </div>
             <div class="form-group">
-              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Lozinka</label>
-              <input type="text" class="form-control" id="psw" placeholder="Unesite lozinku">
+			   <input type='checkbox' class="form-check-input" >
+              <label for="usrname"> Ivan Ivanovic </label>  
             </div>
+            
             
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Registruj</button>
           </form>

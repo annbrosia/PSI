@@ -5,7 +5,12 @@
 		<title> Master Mind Registruj </title>
 		<link rel="stylesheet" href="stil.css">
 	
-		
+<script>
+function prijavise() //da se otvori u istom tabu
+{
+ window.open("index.html","_self")
+}
+</script>		
 	</head> 
 
 
@@ -43,7 +48,7 @@
 		 
 		 <tr> </tr>
 		 <td colspan = "2">
-		 <input type="submit" name = "klik_reg" value="Registruj se">
+		 <input type="submit" name = "klik_reg" value="Registruj se" onclick='prijavise()'>
 		 </td>
 		 
 		 <tr>
