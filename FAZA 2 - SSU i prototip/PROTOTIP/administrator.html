@@ -10,20 +10,19 @@
 
 
 
- 
 </head>
 <body>
 
 <div class="container">
 
- 
+
 
 
 
      <div class='row'>
                 <div class='col-sm-3'>
                     <p id='par1' class ="glow" >Ulogovan administrator</p>
-                   
+
                     <br>
                     <br>
                     <br>
@@ -36,33 +35,35 @@
                     <br>
                     <br>
                     <br>
-                    
+
                     <a href='rang.html' class='linkovi' id='m3' >RANG LISTA</a>
                     <br>
 				    <a href='#' class='linkovi' id="registruj_moderatora_link">Registruj moderatora</a>
                     <br>
                     <a href='#' class='linkovi' id="ukloni_moderatora_link">Ukloni moderatora</a>
                     <br>
+                    <a href='sva_pitanja_moderatora_za_admina.html' class='linkovi' id="prikazi_pitanja_link">Pitanja moderatora</a>
+                  <br />
                     <a href='#' class='linkovi' id="obavjesti_korisnika_link">Obavesti korisnika</a>
-                    <br>
+                    <br />
                     <a href='#' class='linkovi' id="ukloni_korisnika_link">Ukloni korisnika</a>
                     <br>
-	
+
                     <a href='index.html' class='linkovi' id='m5' >ODJAVA</a>
                     <br>
                 </div>
-				
-				
+
+
                 <div class='col-sm-4' style = "color: white;">
                     <br>
 					<br>
 					<br>
 					<br>
-					
+
 					<br>
                     <h2><i>Steknite znanje na zabavan nacin</i></h2>
                     <p id='p1'>
-                        Sva pitanja i zadaci koji se postavljaju u kvizu preuzeti su iz zvanične literature, 
+                        Sva pitanja i zadaci koji se postavljaju u kvizu preuzeti su iz zvanične literature,
                         tako da je verodostojnost tačnih odgovora na najvišem nivou.
                     </p>
                     <p>
@@ -72,7 +73,7 @@
                     </p>
                     <br>
                     <br>
-                   
+
                     <p>
 
                     </p>
@@ -93,7 +94,7 @@
   <!-- Modal za registraciju moderatora -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal sadrzaj-->
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
@@ -107,26 +108,26 @@
             </div>
             <div class="form-group">
 			   <input type='checkbox' class="form-check-input" >
-              <label for="usrname"> Ivan Ivanovic </label>  
+              <label for="usrname"> Ivan Ivanovic </label>
             </div>
-            
-            
+
+
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Registruj</button>
           </form>
         </div>
-		
+
         <div class="modal-footer"> <!--footer-->
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Otkazi</button>
         </div>
       </div>
     </div>
-  </div> 
-  
-  
+  </div>
+
+
    <!-- Modal za uklanjanje moderatora -->
   <div class="modal fade" id="myModal2" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal sadrzaj-->
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
@@ -139,23 +140,23 @@
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Korisnicko ime:</label>
               <input type="text" class="form-control" id="usrname" placeholder="Unesite korisnicko ime">
             </div>
-        
-            
+
+
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Ukloni</button>
           </form>
         </div>
-		
+
         <div class="modal-footer"> <!--footer-->
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Otkazi</button>
         </div>
       </div>
     </div>
-  </div> 
-  
+  </div>
+
    <!-- Modal za uklanjanje korisnika -->
   <div class="modal fade" id="myModal3" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal sadrzaj za uklanjanje korisnika-->
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
@@ -168,24 +169,24 @@
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Korisnicko ime:</label>
               <input type="text" class="form-control" id="usrname" placeholder="Unesite korisnicko ime">
             </div>
-        
-            
+
+
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Ukloni</button>
           </form>
         </div>
-		
+
         <div class="modal-footer"> <!--footer-->
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Otkazi</button>
         </div>
       </div>
     </div>
-  </div> 
-  
-  
+  </div>
+
+
    <!-- Modal za obavjestenje korisnika -->
   <div class="modal fade" id="myModal4" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal sadrzaj za obavjestenje korisnika-->
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
@@ -198,27 +199,27 @@
               <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email:</label>
               <input type="text" class="form-control" id="usrname" placeholder="Unesite email korisnika">
             </div>
-        
+
 		  <div class="form-group">
               <label for="poruka"><span class="glyphicon glyphicon-envelope"></span> Poruka:</label>
              <textarea class = "form-control" id='poruka' style="min-width: 100%"  placeholder="Unesite poruku" ></textarea>
             </div>
-		
+
 
               <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-ok"></span> Posalji</button>
           </form>
         </div>
-		
+
         <div class="modal-footer"> <!--footer-->
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Otkazi</button>
         </div>
       </div>
     </div>
-  </div> 
-  
-  
+  </div>
+
+
 </div> <!--end_container-->
- 
+
 <script>
 $(document).ready(function(){
   $("#ukloni_korisnika_link").click(function(){
