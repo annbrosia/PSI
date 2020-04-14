@@ -46,6 +46,8 @@
                   <br />
                     <a href='#' class='linkovi' id="obavjesti_korisnika_link">Obavesti korisnika</a>
                     <br />
+					       <a href='#' class='linkovi' id="komentari_korisnika_link">Komentari korisnika</a>
+					<br />	   
                     <a href='#' class='linkovi' id="ukloni_korisnika_link">Ukloni korisnika</a>
                     <br>
 
@@ -188,6 +190,32 @@
       </div>
     </div>
   </div>
+  
+  <!-- Modal za komentare korisnika -->
+  <div class="modal fade" id="myModal5" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal sadrzaj-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Komentari korisnika</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> @boki89: Obozavam vas sajt! Najdraza kategorija mi je sport!</label>
+            </div>
+         
+          </form>
+        </div>
+
+        <div class="modal-footer"> <!--footer-->
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Nazad</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
    <!-- Modal za obavjestenje korisnika -->
@@ -198,12 +226,12 @@
       <div class="modal-content">
         <div class="modal-header" style="padding:35px 50px;">
           <button type="button" class="close" data-dismiss="modal">&times;</button> <!--dugme ukloni-->
-          <h4><span class="glyphicon glyphicon-lock"></span> Obavjesti korisnika</h4>
+          <h4><span class="glyphicon glyphicon-lock"></span> Obavesti korisnika</h4>
         </div>
         <div class="modal-body" style="padding:40px 50px;">
           <form role="form">
             <div class="form-group">
-              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email:</label>
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username:</label>
               <input type="text" class="form-control" id="usrname" placeholder="Unesite email korisnika">
             </div>
 
@@ -255,6 +283,11 @@ $(document).ready(function(){
 $(document).ready(function(){
   $("#obavjesti_korisnika_link").click(function(){
     $("#myModal4").modal();
+  });
+});  
+  $(document).ready(function(){
+  $("#komentari_korisnika_link").click(function(){
+    $("#myModal5").modal();
   });
 });
 
