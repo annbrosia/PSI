@@ -76,16 +76,16 @@
 
 		 <tr>
 		 <td> <p> Kategorija </p> </td>
-		 <td > <select name="opcija" id="kategorije">
-                    <option value="8" name="8" class = "opcija" <?php if($_SESSION['opcija'] == 8) {$_SESSION['opcija'] =""; echo 'selected'; } ?> > Biologija</option>
-                    <option value="7" name="7" class = "opcija" <?php if($_SESSION['opcija'] == 7) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Istorija</option>
-                    <option value="3" name="3" class = "opcija"  <?php if($_SESSION['opcija'] == 3) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Geografija</option>
-                    <option value="4" name="4" class = "opcija"  <?php if($_SESSION['opcija'] == 4) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Prirodne nauke</option>
-                     <option value="2" name="2" class = "opcija"  <?php if($_SESSION['opcija'] == 2) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Muzika</option>
-                    <option value="9" name="9" class = "opcija"  <?php if($_SESSION['opcija'] == 9) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Umetnost</option>
-                    <option value="6" name="6" class = "opcija"  <?php if($_SESSION['opcija'] == 6) {$_SESSION['opcija'] =""; echo 'selected'; } ?>  >Sport</option>
-                    <option value="5" name="5" class = "opcija"  <?php if($_SESSION['opcija'] == 5) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Filmovi</option>
-                      <option value="1"  name="1" class = "opcija"  <?php if($_SESSION['opcija'] == 1) {$_SESSION['opcija'] =""; echo 'selected'; } ?>  >Serije</option>
+		  <td > <select name="opcija" id="kategorije" style = "color: white">
+                    <option value="8" name="8" class = "opcija" <?php if((!empty($_SESSION['opcija'])) && ($_SESSION['opcija'] == 8)) {$_SESSION['opcija'] =""; echo 'selected'; } ?> > Biologija</option>
+                    <option value="7" name="7" class = "opcija" <?php if((!empty($_SESSION['opcija'])) && ($_SESSION['opcija'] == 7)) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Istorija</option>
+                    <option value="3" name="3" class = "opcija"  <?php if((!empty($_SESSION['opcija']))  && ($_SESSION['opcija'] == 3)) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Geografija</option>
+                    <option value="4" name="4" class = "opcija"  <?php if((!empty($_SESSION['opcija'])) && ($_SESSION['opcija'] == 4)) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Prirodne nauke</option>
+                     <option value="2" name="2" class = "opcija"  <?php if((!empty($_SESSION['opcija'])) && ($_SESSION['opcija'] == 2)) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Muzika</option>
+                    <option value="9" name="9" class = "opcija"  <?php if((!empty($_SESSION['opcija'])) && ($_SESSION['opcija'] == 9)) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Umetnost</option>
+                    <option value="6" name="6" class = "opcija"  <?php if((!empty($_SESSION['opcija'])) && ($_SESSION['opcija'] == 6)) {$_SESSION['opcija'] =""; echo 'selected'; } ?>  >Sport</option>
+                    <option value="5" name="5" class = "opcija"  <?php if((!empty($_SESSION['opcija']))  && ($_SESSION['opcija'] == 5)) {$_SESSION['opcija'] =""; echo 'selected'; } ?> >Filmovi</option>
+                      <option value="1"  name="1" class = "opcija"  <?php if((!empty($_SESSION['opcija'])) && ($_SESSION['opcija'] == 1)) {$_SESSION['opcija'] =""; echo 'selected'; } ?>  >Serije</option>
 
                 </select></td>
 		 </tr>
