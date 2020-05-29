@@ -1,0 +1,551 @@
+@import "https://fonts.googleapis.com/css?family=Trade+Winds&display=swap";
+
+
+/*  Ana Blazic, Ana Saponjic*/
+body {
+  background-image: url('../slike/kosmos.jpg');
+  z-index: -1;
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+h2{
+    text-align: center;
+
+}
+body{
+    background-color:white;
+}
+#dugme{
+    margin-left: 380px;
+}
+a{
+    font-size: 15px;
+	color: white;
+	font-family: 'Trade Winds', cursive;
+
+}
+
+a:hover{
+    font-size: large;
+	color: white;
+
+}
+a:active{
+	color:white;
+}
+.nasa{
+    margin-left: 100px;
+}
+.linkovi{
+    font-size: 40px;
+
+
+}
+a.linkovi:hover{
+    font-size:49px ;
+	-webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+ #par1{
+    padding: 0cm;
+ }
+
+
+
+ .modal-header, h4, .close {
+    background-color: #5cb85c;
+    color:white !important;
+    text-align: center;
+    font-size: 30px;
+  }
+  .modal-footer {
+    background-color: #f9f9f9;
+  }
+
+  .logofront{
+	  z-index: 10;
+  }
+
+  .bijelip{
+	  color: white;
+  }
+
+
+/*logovanje*/
+
+
+.loginBox
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width:350px;
+	height:500px;
+	padding:80px 40px;
+	box-sizing: border-box;
+	background:rgba(0,0,0,0.5);
+}
+
+
+.naslov_mastermind h2
+{
+	margin:0;
+	padding:0 0 20px;
+	color: white;
+	text-align:center;
+	-webkit-animation: glow 0.9s ease-in-out infinite alternate;
+  -moz-animation: glow 0.9s ease-in-out infinite alternate;
+  animation: glow 0.9s ease-in-out infinite alternate;
+  font-family: 'Trade Winds', cursive;
+}
+
+
+
+.loginBox p
+{
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	color:#fff;
+	font-family: sans-serif;
+}
+
+
+
+.loginBox input
+{
+
+	width:100%;
+		margin-bottom: 20px;
+
+}
+.loginBox input[type="text"], .loginBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+
+}
+
+td
+{
+	padding: 3px;
+}
+
+
+.loginBox input[type="submit"]
+{
+	outline:none;
+	height: 40px;
+	font-size:16px;
+    color: white;
+    font-weight: bold;
+	font-family: sans-serif;
+	cursor:pointer;
+	border-radius:20px;
+    background-color: #b000e6;
+    border: 10px solid transparent;
+	  font-family: 'Trade Winds', cursive;
+
+
+}
+
+
+
+.loginBox input[type="submit"]:hover
+{
+	 background-color: #ceffd0;
+    -webkit-animation: breathing 1s infinite;
+            animation: breathing 1s infinite;
+    -webkit-box-shadow: 0px 0px 17px 0px #b000e6;
+            box-shadow: 0px 0px 18px 0px #483080;
+            box-shadow: 0px 0px 19px 0px #c74dff;
+
+			color: b000e6;
+
+}
+
+
+.loginBox a
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+    font-family:sans-serif;
+
+}
+
+
+.words_login p
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+
+}
+::placeholder
+{
+	color:rgba(255,255,255,0.5);
+}
+
+
+.user
+{
+	width:100px;
+	height:100px;
+	overflow:hidden;
+	position:absolute;
+	top:calc(-100px/2);
+	left:calc(50% - 50px);
+	border-radius:50%;
+
+}
+
+
+
+
+/*kraj logovanje*/
+
+
+
+/*registracija*/
+
+.regBox
+{
+	margin-top: 30px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width:600px;
+	height:580px;
+	padding:80px 40px;
+	box-sizing: border-box;
+	background:rgba(0,0,0,0.5);
+}
+
+
+.naslov_mastermind h2
+{
+	margin:0;
+	padding:0 0 20px;
+	color: white;
+	text-align:center;
+	-webkit-animation: glow 0.9s ease-in-out infinite alternate;
+  -moz-animation: glow 0.9s ease-in-out infinite alternate;
+  animation: glow 0.9s ease-in-out infinite alternate;
+  font-family: 'Trade Winds', cursive;
+}
+
+
+
+.regBox p
+{
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	color:#fff;
+	font-family: sans-serif;
+}
+
+
+
+.regBox input
+{
+	width:100%;
+	margin-bottom: 20px;
+}
+.regBox input[type="text"], .regBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+}
+
+
+
+.regBox input[type="submit"]
+{
+	outline:none;
+	height: 40px;
+	font-size:16px;
+    color: white;
+    font-weight: bold;
+	font-family: sans-serif;
+	cursor:pointer;
+	border-radius:20px;
+    background-color: #b000e6;
+    border: 10px solid transparent;
+	font-family: 'Trade Winds', cursive;
+}
+
+
+.opcija{
+
+	color:rgba(255,255,255,0.5);
+	background-color: #b000e6;
+}
+
+
+.regBox input[type="submit"]:hover
+{
+	 background-color: #ceffd0;
+    -webkit-animation: breathing 1s infinite;
+            animation: breathing 1s infinite;
+    -webkit-box-shadow: 0px 0px 17px 0px #b000e6;
+            box-shadow: 0px 0px 18px 0px #483080;
+            box-shadow: 0px 0px 19px 0px #c74dff;
+
+			color: b000e6;
+
+}
+
+
+
+.regBox a
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+    font-family:sans-serif;
+
+}
+
+::placeholder
+{
+	color:rgba(255,255,255,0.5);
+}
+
+/*kraj registracija*/
+
+
+/*registracija moderatora*/
+
+.regBoxRM
+{
+	margin-top: 146px;
+    position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	width:600px;
+	height:809px;
+	padding:80px 40px;
+	box-sizing: border-box;
+	background:rgba(0,0,0,0.5);
+
+}
+
+textarea{
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	color: rgba(255,255,255,0.5);
+	resize: none;
+}
+
+.regBoxRM select
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:rgba(255,255,255,0.5);
+	font-size: 16px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.regBoxRM p
+{
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	color:#fff;
+	font-family: sans-serif;
+}
+
+
+
+.regBoxRM input
+{
+	width:100%;
+	margin-bottom: 20px;
+}
+
+.regBoxRM input[type="text"], .regBoxRM input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline:none;
+	height:40px;
+	color:#fff;
+	font-size: 16px;
+}
+
+
+
+.regBoxRM input[type="submit"]
+{
+	outline:none;
+	height: 40px;
+	font-size:16px;
+    color: white;
+    font-weight: bold;
+	font-family: sans-serif;
+	cursor:pointer;
+	border-radius:20px;
+    background-color: #b000e6;
+    border: 10px solid transparent;
+	font-family: 'Trade Winds', cursive;
+	width: 400px;
+
+
+
+}
+.opcija{
+
+	color:rgba(255,255,255,0.5);
+	background-color: #b000e6;
+}
+
+
+.regBoxRM input[type="submit"]:hover
+{
+	 background-color: #ceffd0;
+    -webkit-animation: breathing 1s infinite;
+            animation: breathing 1s infinite;
+    -webkit-box-shadow: 0px 0px 17px 0px #b000e6;
+            box-shadow: 0px 0px 18px 0px #483080;
+            box-shadow: 0px 0px 19px 0px #c74dff;
+
+			color: b000e6;
+
+}
+
+
+.regBoxRM a
+{
+	color: #fff;
+	font-size:14px;
+	font-weight:bold;
+    font-family:sans-serif;
+
+}
+
+::placeholder
+{
+	color:rgba(255,255,255,0.5);
+}
+
+/*kraj registracija moderatora*/
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #b000e6, 0 0 40px #483080, 0 0 50px #824dff, 0 0 60px #e60073, 0 0 70px #824dff;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #c74dff, 0 0 40px #c74dff, 0 0 50px #c74dff, 0 0 60px #ff4da6, 0 0 70px #c74dff, 0 0 150px #483080;
+  }
+}
+
+/*pitanja_mod*/
+.dugme_obrisi, .dugme_obavjesti
+{
+    font-size: 16px;
+    height: 40px;
+    width: 140px;
+	  outline:none;
+    color: white;
+    font-weight: bold;
+	  font-family: sans-serif;
+	  cursor:pointer;
+	  border-radius:20px;
+    background-color: #b000e6;
+    border: 10px;
+	  font-family: 'Trade Winds', cursive;
+}
+
+.dugme_obrisi:hover, .dugme_obavjesti:hover, .dugme_obrisi2:hover
+{
+	 background-color: #ceffd0;
+    -webkit-animation: breathing 1s infinite;
+            animation: breathing 1s infinite;
+    -webkit-box-shadow: 0px 0px 17px 0px #b000e6;
+            box-shadow: 0px 0px 18px 0px #483080;
+            box-shadow: 0px 0px 19px 0px #c74dff;
+
+			color: b000e6;
+}
+
+
+ .prikazi_vise, .prikazi_vise_komentara
+{
+    font-size: 16px;
+    height: 40px;
+    width: 140px;
+	  outline:none;
+    color: #b000e6;
+    font-weight: bold;
+	  font-family: sans-serif;
+	  cursor:pointer;
+	  border-radius:20px;
+    background-color: #ceffd0;
+    border: 10px;
+	  font-family: 'Trade Winds', cursive;
+    -webkit-animation: breathing 1s infinite;
+            animation: breathing 1s infinite;
+    -webkit-box-shadow: 0px 0px 30px 0px #1e0924;
+            box-shadow: 0px 0px 30px 0px #c334eb;
+            box-shadow: 0px 0px 23px 10px #c334eb;
+
+}
+
+.prikazi_vise:hover, .prikazi_vise_komentara:hover,
+{
+	 background-color: #b000e6;
+    -webkit-animation: breathing 1s infinite;
+            animation: breathing 1s infinite;
+    -webkit-box-shadow: 0px 0px 30px 0px #ceffd0;
+            box-shadow: 0px 0px 30px 0px #ceffd0;
+            box-shadow: 0px 0px 23px 10px #ceffd0;
+
+			color: #ceffd0;
+}
+
+#broj
+{
+	-webkit-animation: glow 0.9s ease-in-out infinite alternate;
+  -moz-animation: glow 0.9s ease-in-out infinite alternate;
+  animation: glow 0.9s ease-in-out infinite alternate;
+  font-family: 'Trade Winds', cursive;
+}
+
+
+.dugme_obrisi2
+{
+
+	  outline:none;
+    color: white;
+    font-weight: bold;
+	  font-family: sans-serif;
+	  cursor:pointer;
+	  border-radius:20px;
+    background-color: #b000e6;
+    border: 10px;
+	  font-family: 'Trade Winds', cursive;
+}
