@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2020 at 02:43 AM
+-- Generation Time: May 31, 2020 at 01:03 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `kviz`
 --
+CREATE DATABASE IF NOT EXISTS `kviz` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `kviz`;
 
 -- --------------------------------------------------------
 
@@ -30,6 +32,13 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `idKA` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`idKA`) VALUES
+(35);
 
 -- --------------------------------------------------------
 
@@ -52,7 +61,7 @@ CREATE TABLE `igrac` (
 --
 
 INSERT INTO `igrac` (`idKI`, `ime`, `prezime`, `email`, `poeni`, `poeniTrenutni`, `blokirani`) VALUES
-(8, 'Mila', 'Milic', 'mila@gmail.com', 0, 0, 0),
+(8, 'Mila', 'Milic', 'mila@gmail.com', 6, 0, 0),
 (12, 'Milena', 'Milenic', 'milenica@gmail.com', 0, 1, 0),
 (13, 'Milos', 'Milosic', 'milosmilos123@gmail.com', 0, 1, 0),
 (14, 'Ivo', 'Ivic', 'ivoivomalicar123@gmail.com', 0, 1, 1),
@@ -66,7 +75,8 @@ INSERT INTO `igrac` (`idKI`, `ime`, `prezime`, `email`, `poeni`, `poeniTrenutni`
 (22, 'Jelena', 'Jelenic', 'jeckapecka1@gmail.com', 0, 1, 1),
 (23, 'Marijana', 'Marijanovic', 'marijanamarijana131@gmail.com', 0, 1, 0),
 (24, 'Isidora', 'Isidoric', 'isidoraisidoric@gmail.com', 0, 1, 0),
-(30, 'Email', 'Emailic', 'marijalalic@hotmail.rs', 0, 1, 1);
+(30, 'Email', 'Emailic', 'marijalalic@hotmail.rs', 0, 1, 1),
+(34, 'Martina', 'Markovic', 'martinamarkovic998@gmail.com', 3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -138,7 +148,7 @@ CREATE TABLE `korisnik` (
 --
 
 INSERT INTO `korisnik` (`idKorisnika`, `username`, `password`, `uloga`, `aktivan`, `obrisan`) VALUES
-(1, 'maki98', 'myysql', 'moderator', 0, 0),
+(1, 'maki98', 'myysql', 'moderator', 1, 0),
 (2, 'saleno1', 'workwork', 'moderator', 0, 0),
 (3, 'lola1', '123lola', 'moderator', 0, 0),
 (4, 'uki', 'uki123', 'moderator', 0, 0),
@@ -168,7 +178,9 @@ INSERT INTO `korisnik` (`idKorisnika`, `username`, `password`, `uloga`, `aktivan
 (28, 'mitarmitro23', '123456', 'moderator', 0, 0),
 (29, 'goks23goks', '123456', 'moderator', 0, 0),
 (30, 'email_test123', '123456', 'igrac', 0, 0),
-(31, 'dzoni111', '123456', 'moderator', 0, 1);
+(31, 'dzoni111', '123456', 'moderator', 0, 1),
+(34, 'marti', 'ajica', 'igrac', 0, 0),
+(35, 'admin', 'admin123', 'admin', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -261,7 +273,7 @@ INSERT INTO `pitanje` (`idPitanja`, `tekstPitanja`, `tacan`, `netacan1`, `netaca
 (9, 'Kako se zove žena koja je stekla status potencijalne ljubavi Sherlocka Holmesa:', 'Irene Adler', 'Mrs. Hudson', 'Molly Hooper', 'Mary Watson', 2, 1),
 (10, 'The Simpsons serija ima više od:', '600 epizoda', '700 epizoda', '800 epizoda', '900 epizoda', 2, 1),
 (11, 'Prijatelj Sherlock Holmesa je:', 'Dr John Watson', 'Mycroft', 'Dr Who', 'Dr House', 2, 1),
-(12, 'Kako se zovu decaci iz serije Stranger Things:\r\nJoe,Finn & Mark', 'Mike,Dustin,Lucas & Will', 'Finn,Will,Lucas', 'Will, Jacob,Caleb & Logan', 'Joe,Finn & Mark', 2, 1),
+(12, 'Kako se zovu decaci iz serije Stranger Things:', 'Mike,Dustin,Lucas & Will', 'Finn,Will,Lucas', 'Will, Jacob,Caleb & Logan', 'Joe,Finn & Mark', 2, 1),
 (13, 'Serija u kojoj glumci nose maske Salvadora Dalija i crvene kombinezone:', 'La casa de papel', 'The Handmaids Tale', ' Black Mirror', 'Friends', 2, 1),
 (14, 'Serija koja prikazuje razvoj tehnologije i naše zavisnosti od nje kroz mračnu i opominjuću viziju budućnosti:', 'Black Mirror', 'The Handmaids Tale', 'Breaking Bad', 'Stranger Things', 2, 1),
 (15, 'Serija čija priča prati profesora hemije koji, usled teške bolesti, postaje nezaustavljivi proizvođač plave droge metamfetamina i zastrašujući narko bos:', 'Breaking bad', 'Narcos', 'Black Mirror', 'Stranger Things', 2, 1),
@@ -450,7 +462,13 @@ CREATE TABLE `preporuka` (
 INSERT INTO `preporuka` (`idPreporuke`, `tekst`, `idKatP`) VALUES
 (1, 'OPSTE ZNANJE NA DLANU - ENCIKLOPEDIJA ZA CELU PORODICU', 3),
 (2, 'Podsjeti se najpopularnijih serija svih vremena.', 1),
-(3, 'MUZIKA - Velika ilustrovana enciklopedija', 2);
+(3, 'MUZIKA - Velika ilustrovana enciklopedija', 2),
+(4, 'ENCIKLOPEDIJA SVEZNANJA - Grupa autora', 4),
+(5, 'Pogledaj neke od najboljih filmova svih vremena.', 5),
+(6, 'Priseti se velikih sportskih desavanja.', 6),
+(7, 'ISTORIJA SVETA - Grupa autora', 7),
+(8, 'ŠKOLSKA ENCIKLOPEDIJA BIOLOGIJE - Grupa autora', 8),
+(9, 'UMETNOST Velika ilustrovana enciklopedija - Grupa autora', 9);
 
 -- --------------------------------------------------------
 
@@ -464,6 +482,14 @@ CREATE TABLE `rezultati` (
   `datum` date NOT NULL,
   `idKRez` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+
+--
+-- Dumping data for table `rezultati`
+--
+
+INSERT INTO `rezultati` (`idrezultati`, `poeni`, `datum`, `idKRez`) VALUES
+(1, 6, '2020-05-29', 8),
+(2, 3, '2020-05-30', 34);
 
 -- --------------------------------------------------------
 
@@ -569,7 +595,7 @@ ALTER TABLE `zahtevmoderatora`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `idKA` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idKA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `kategorija`
@@ -587,7 +613,7 @@ ALTER TABLE `komentar`
 -- AUTO_INCREMENT for table `korisnik`
 --
 ALTER TABLE `korisnik`
-  MODIFY `idKorisnika` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `idKorisnika` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `moderator`
@@ -605,19 +631,19 @@ ALTER TABLE `motivacionaporuka`
 -- AUTO_INCREMENT for table `preporuka`
 --
 ALTER TABLE `preporuka`
-  MODIFY `idPreporuke` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idPreporuke` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `rezultati`
 --
 ALTER TABLE `rezultati`
-  MODIFY `idrezultati` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idrezultati` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `zahtevmoderatora`
 --
 ALTER TABLE `zahtevmoderatora`
-  MODIFY `idZahteva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idZahteva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
