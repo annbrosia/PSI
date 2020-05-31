@@ -63,10 +63,10 @@ for (i in data)
 cnt=cnt+1;
 html+= "<table style = 'background: rgba(000, 000, 000, 0.4); width: 100%;' ><tr align = 'center'>  <td colspan = '4'>  <font color = 'white' size = '3px'>  <label id = 'moderator'> <label id = 'broj'> <font size='6px'> " + cnt +". </font></label><i>" + data[i].username + "</i> (<label id = 'kategorija'><i>" + data[i].naziv + "</i></label>): </label> </u></font>  </td></tr> <tr align = 'center'>"+
 "<td>  <label id = 'pitanje'> <font color = 'white' style = 'opacity: 2;'><i> " + data[i].tekstPitanja + "</i> </font></label>  </td>   </tr>      <tr><td> <div class='form-group has-success has-feedback'>"+
-"<input type='text' class='form-control' id='tacan_odg' style ='color: green;' value= " + data[i].tacan + "  disabled>  <span class='glyphicon glyphicon-ok form-control-feedback'></span>  </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>         <input type='text' class='form-control' id='pogresan_odg1' style ='color: red; opacity: 0.4' value= " + data[i].netacan1 +  " disabled> "+
+"<input type='text' class='form-control' id='tacan_odg' style ='color: green;' value= '" + data[i].tacan + "'  disabled>  <span class='glyphicon glyphicon-ok form-control-feedback'></span>  </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>         <input type='text' class='form-control' id='pogresan_odg1' style ='color: red; opacity: 0.4' value= '" + data[i].netacan1 +  "' disabled> "+
 "<span class='glyphicon glyphicon-remove form-control-feedback'></span> </div>  </td> "+
-"</tr>  <tr>    <td>   <div class='form-group has-error has-feedback' >   <input type='text' class='form-control' id='pogresan_odg2' style ='color: red; opacity: 0.4'  value= " + data[i].netacan2 + " disabled>  <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>  "+
-"<input type='text' class='form-control' id='pogresan_odg3' style ='color: red; opacity: 0.4'  value= " + data[i].netacan3 + "  disabled>        <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td  colspan = '4'>    <center>      <button type='submit' class='dugme_obrisi' id =  "+ data[i].idPitanja +"></span> Obrisi</button>    </center>    </td>  </tr> </table> <br /> <br /> <br /> ";
+"</tr>  <tr>    <td>   <div class='form-group has-error has-feedback' >   <input type='text' class='form-control' id='pogresan_odg2' style ='color: red; opacity: 0.4'  value= '" + data[i].netacan2 + "' disabled>  <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>  "+
+"<input type='text' class='form-control' id='pogresan_odg3' style ='color: red; opacity: 0.4'  value= '" + data[i].netacan3 + "'  disabled>        <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td  colspan = '4'>    <center>      <button type='submit' class='dugme_obrisi' id =  "+ data[i].idPitanja +"></span> Obrisi</button>    </center>    </td>  </tr> </table> <br /> <br /> <br /> ";
 }
 if(ukupno<uk_broj)
 {
@@ -105,10 +105,10 @@ for (i in data)
 cnt1=cnt1+1;
 html+= "<table style = 'background: rgba(000, 000, 000, 0.4); width: 100%;' ><tr align = 'center'>  <td colspan = '4'>  <font color = 'white' size = '3px'>  <label id = 'moderator'> <label id = 'broj'> <font size='6px'> " + cnt1 +". </font></label><i>" + data[i].username + "</i> (<label id = 'kategorija'><i>" + data[i].naziv + "</i></label>): </label> </u></font>  </td></tr> <tr align = 'center'>"+
 "<td>  <label id = 'pitanje'> <font color = 'white' style = 'opacity: 2;'><i> " + data[i].tekstPitanja + "</i> </font></label>  </td>   </tr>      <tr><td> <div class='form-group has-success has-feedback'>"+
-"<input type='text' class='form-control' id='tacan_odg' style ='color: green;' value= " + data[i].tacan + "  disabled>  <span class='glyphicon glyphicon-ok form-control-feedback'></span>  </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>         <input type='text' class='form-control' id='pogresan_odg1' style ='color: red; opacity: 0.4' value= " + data[i].netacan1 +  " disabled> "+
+"<input type='text' class='form-control' id='tacan_odg' style ='color: green;' value= '" + data[i].tacan + "'  disabled>  <span class='glyphicon glyphicon-ok form-control-feedback'></span>  </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>         <input type='text' class='form-control' id='pogresan_odg1' style ='color: red; opacity: 0.4' value= '" + data[i].netacan1 +  "' disabled> "+
 "<span class='glyphicon glyphicon-remove form-control-feedback'></span> </div>  </td> "+
-"</tr>  <tr>    <td>   <div class='form-group has-error has-feedback' >   <input type='text' class='form-control' id='pogresan_odg2' style ='color: red; opacity: 0.4'  value= " + data[i].netacan2 + " disabled>  <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>  "+
-"<input type='text' class='form-control' id='pogresan_odg3' style ='color: red; opacity: 0.4'  value= " + data[i].netacan3 + "  disabled>        <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td  colspan = '4'>    <center>      <button type='submit' class='dugme_obrisi' id =  "+ data[i].idPitanja +"></span> Obrisi</button>    </center>    </td>  </tr> </table> <br /> <br /> <br /> ";
+"</tr>  <tr>    <td>   <div class='form-group has-error has-feedback' >   <input type='text' class='form-control' id='pogresan_odg2' style ='color: red; opacity: 0.4'  value= '" + data[i].netacan2 + "' disabled>  <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td>      <div class='form-group has-error has-feedback'>  "+
+"<input type='text' class='form-control' id='pogresan_odg3' style ='color: red; opacity: 0.4'  value= '" + data[i].netacan3 + "'  disabled>        <span class='glyphicon glyphicon-remove form-control-feedback'></span>      </div>    </td>  </tr>  <tr>    <td  colspan = '4'>    <center>      <button type='submit' class='dugme_obrisi' id =  "+ data[i].idPitanja +"></span> Obrisi</button>    </center>    </td>  </tr> </table> <br /> <br /> <br /> ";
 }
 if(flag_dugme == "prikazi_vise")
 {
@@ -161,7 +161,7 @@ for($i = 0; $i<$uk; $i++)
 <tr>
 <td>
 <div class="form-group has-success has-feedback">
-<input type="text" class="form-control" id="tacan_odg" style ="color: green;" value= <?php echo "{$pitanja[$i]->tacan}" ?> disabled>
+<input type="text" class="form-control" id="tacan_odg" style ="color: green;" value= '<?php echo $pitanja[$i]->tacan; ?>' disabled>
 <span class="glyphicon glyphicon-ok form-control-feedback"></span>
 </div>
 </td>
@@ -169,7 +169,7 @@ for($i = 0; $i<$uk; $i++)
 <tr>
 <td>
 <div class="form-group has-error has-feedback">
-<input type="text" class="form-control" id="pogresan_odg1" style ="color: red; opacity: 0.4" value=<?php echo "{$pitanja[$i]->netacan1}" ?> disabled>
+<input type="text" class="form-control" id="pogresan_odg1" style ="color: red; opacity: 0.4" value= "<?php echo $pitanja[$i]->netacan1 ?>" disabled>
 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 </div>
 </td>
@@ -177,7 +177,7 @@ for($i = 0; $i<$uk; $i++)
 <tr>
 <td>
 <div class="form-group has-error has-feedback" >
-<input type="text" class="form-control" id="pogresan_odg2" style ="color: red; opacity: 0.4"  value=<?php echo "{$pitanja[$i]->netacan2}" ?> disabled>
+<input type="text" class="form-control" id="pogresan_odg2" style ="color: red; opacity: 0.4"   value= "<?php echo $pitanja[$i]->netacan2 ?>" disabled>
 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 </div>
 </td>
@@ -185,7 +185,7 @@ for($i = 0; $i<$uk; $i++)
 <tr>
 <td>
 <div class="form-group has-error has-feedback">
-<input type="text" class="form-control" id="pogresan_odg3" style ="color: red; opacity: 0.4"  value= <?php echo "{$pitanja[$i]->netacan3}" ?> disabled>
+<input type="text" class="form-control" id="pogresan_odg3" style ="color: red; opacity: 0.4"   value= "<?php echo $pitanja[$i]->netacan3 ?>" disabled>
 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 </div>
 

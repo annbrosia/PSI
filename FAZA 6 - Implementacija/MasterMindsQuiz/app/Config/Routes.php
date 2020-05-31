@@ -30,7 +30,32 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->setDefaultNamespace('App\Controllers');
+$routes->setDefaultController('Home');
+$routes->setDefaultMethod('index');
+$routes->setTranslateURIDashes(false);
+$routes->set404Override();
+$routes->setAutoRoute(true);
+
+/**
+ * --------------------------------------------------------------------
+ * Route Definitions
+ * --------------------------------------------------------------------
+ */
+
+// We get a performance increase by specifying the default
+// route since we don't have to scan directories.
+$routes->get('/', 'Home::index', ['filter' => 'noauth']);
+$routes->get('index', 'Home::index', ['filter' => 'noauth']);
+$routes->get('rjesenja', 'Takmicenje::rezultati_bodovi');
+$routes->get('Takmicenje/rjesenja', 'Takmicenje::rezultati_bodovi', ['filter' => 'kvizzavrsen']);
+$routes->get('Trening/rjesenja', 'Trening::rezultati_bodovi_trening', ['filter' => 'kvizzavrsen']);
+
+
+$routes->match(['get', 'post'], 'regIg', 'Home::regIg', ['filter' => 'noauth']);
+$routes->match(['get', 'post'], 'regMod', 'Home::regMod', ['filter' => 'noauth']);
+$routes->match(['get', 'post'], 'gost', 'Home::gost', ['filter' => 'noauth']);
+$routes->match(['get', 'post'], 'gost', 'Home::gost', ['filter' => 'noauth']);
 
 /**
  * --------------------------------------------------------------------

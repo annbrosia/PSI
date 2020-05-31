@@ -15,11 +15,22 @@ class PitanjeModel extends Model
     protected $allowedFields = ['idPitanja','tekstPitanja','tacan', 'netacan1','netacan2','netacan3','nivo','idKP','idKat'];
 
 
+        /**
+          * nadji_poslednjiId funkcija za trazenje najveceg id-a pitanja
+          *
+          * @return int
+         */
     public function nadji_poslednjiId()
     {
-        $rows = $this->findAll();
-        return count($rows);
-    }
+          $this->selectMax('idPitanja');
+          $query = $this->get();
+          $row = $query->getRow();
+          if($row!==null)
+          {
+           return $row->idPitanja;
+          }
+          else return 0;
+        }
 
     public function nadji_pitanja($idModeratora)
     {
@@ -29,7 +40,7 @@ class PitanjeModel extends Model
     public function izbrisipitanje($tekst)
     {
      $pitanje=$this->where('tekstPitanja',$tekst)->find();
-     $this->delete($pitanje->idPitanja);
+     $this->delete($pitanje['idPitanja']);
     }
 
 

@@ -40,5 +40,8 @@ class ZahtevModeratoraModel extends Model
       return $this->findAll();
     }//end_dohvati_zahtjeve
 
-
+    public function nadji_email($email)
+  {
+      return $this->where('email', $email)->findAll();
+  }
 }//end_ZahtevModeratoraModel

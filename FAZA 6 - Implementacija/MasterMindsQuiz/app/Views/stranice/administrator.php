@@ -16,12 +16,14 @@
 <div class='row'>
 <div class='col-sm-3'>
 <p id='par1' class ="glow" ></p>
+
 <br>  <br> <br>
+<img src="<?php echo base_url('slike/logo_master.png'); ?>" style = "width: '100%'; margin-top: 30px; " >
 </div>
 
 <div class='col-sm-6 text-center ' id='osnovni_meni'>
 <br> <br> <br> <br>
-<a href='<?php echo site_url('Igrac/rang') ?>' class='linkovi' id='m3'> Rang lista </a>
+<a href='<?php echo site_url('Admin/rang') ?>' class='linkovi' id='m3'> Rang lista </a>
 <br>
 <a href = "<?php echo site_url('Admin/zahtjevi_prikaz') ?>" class='linkovi' id="registruj_moderatora_link">Registruj moderatora</a>
 <br>
@@ -35,14 +37,36 @@
 <br>
 <a href="<?php  echo site_url('Admin/ukloni_prikaz') ?>" class='linkovi' id="ukloni_korisnika_link">Ukloni korisnika</a>
 <br>
-<a href= <?php echo site_url('Admin/odjavi_admina') ?> class='linkovi' id='m5' > ODJAVA </a>
+<a href= <?php echo site_url('Home/odjava') ?> class='linkovi' id='m5' > ODJAVA </a>
 <br>
 </div>
 
 
-<div class='col-sm-4' style = "color: white;">
-<br> <br> <br> <br> <br> <br>
-</div>
+<div class='col-sm-3' style = "color: white;">
+  <br>
+<br>
+<br>
+<br>
+
+<br>
+<center>  <h2><i>Dobrodosli, <?php  if(!empty($_SESSION['ulogovaniKorisnik'])) echo $_SESSION['ulogovaniKorisnik']; ?> !</i></h2></center>
+  Stekni znanje na zabavan nacin:
+  <br />
+  <p id='p1'>
+      Sva pitanja i zadaci koji se postavljaju u kvizu preuzeti su iz zvanične literature,
+      tako da je verodostojnost tačnih odgovora na najvišem nivou.
+  </p>
+  <p>
+      Ukoliko ste registrovani korisnik, imate mogucnost da unapredite svoje znanje u delu <b>trening</b> , pre nego sto se oprobate u
+      takmicenju. Ako ste samo gost, da biste vezbali, potrebno je da se registrujete.
+      <br>
+  </p>
+  <br>
+  <br>
+
+  <p>
+
+  </p></div>
 
 </div>
 </div> <!--end_container-->

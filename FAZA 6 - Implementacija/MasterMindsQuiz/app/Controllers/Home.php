@@ -38,16 +38,21 @@ class Home extends BaseController{
 
 
 
-        public function odjava(){
-
-              $db= \Config\Database::connect();
-              $builder=$db->table("korisnik");
-              $builder->set('aktivan', '0', FALSE);
-              $builder->where('username', $_SESSION['ulogovaniKorisnik']);
-              $builder->update();
-              $_SESSION['ulogovaniKorisnik']="";
-              return $this->prikaz("login", []);
-        }
+  public function odjava()
+  {
+    $db= \Config\Database::connect();
+    $builder=$db->table("korisnik");
+    $builder->set('aktivan', '0', FALSE);
+    $builder->where('username', $_SESSION['ulogovaniKorisnik']);
+    $builder->update();
+    $_SESSION['ulogovaniKorisnik']="";
+    $_SESSION['isLoggedIn']="0";
+    $_SESSION['tip_ulogovan']="";
+    $_SESSION['admin']="";
+    $_SESSION['moderator']="";
+    $_SESSION['tip_ulogovan']="";
+    return redirect()->to("index");
+  }
 
 
 
@@ -84,6 +89,8 @@ class Home extends BaseController{
                     $ulogaBaza=$korisnik[0]['uloga'];
                     $_SESSION['ulogovaniKorisnik']=$korisnik[0]['username'];
                     $_SESSION['ulogovaniKorisnikId']=$korisnik[0]['idKorisnika'];
+                    $_SESSION['isLoggedIn']=1; //ulogovan je
+
                     $this->updateAktivan($korisnik[0]);
 
                     if($ulogaBaza=="moderator")
@@ -153,8 +160,34 @@ class Home extends BaseController{
         }
 
 
-         public function registrujModeratora(){
+         public function registrujModeratora()
+         {
+             $rules = ['reg_mod_username' => 'max_length[45]',
+               'reg_mod_lozinka' => 'max_length[45]',
+               'reg_mod_ime' => 'alpha|max_length[45]',
+               'reg_mod_prezime' => 'alpha|max_length[45]',
+               'reg_mod_biografija' => 'max_length[256]'
 
+           ];
+
+           $errors = [
+               'reg_mod_username' => ['max_length' => "Unesite kraci username"],
+               'reg_mod_lozinka' => ['max_length' => "Unesite kracu lozinku"],
+               'reg_mod_ime' => ['alpha' => "Ime sadrzi specijalne karaktera",
+                                  'max_length' => "Ime sadrzi specijalne karaktera"],
+               'reg_mod_prezime' => ['alpha' => "Prezime sadrzi specijalne karaktera"
+                                    ,'max_length' => "Prezime sadrzi previse karaktera"],
+               'reg_mod_biografija' => ['max_length' => "Unesite kracu biografiju"]
+           ];
+           if (!$this->validate($rules, $errors)) {
+               return $this->prikaz('registracijaModeratora',[
+                 'username_errors'=>$this->validator->getError('reg_mod_username'),
+                 'ime_errors'=>$this->validator->getError('reg_mod_ime'),
+                 'prezime_errors'=>$this->validator->getError('reg_mod_prezime'),
+                 'lozinka_errors'=>$this->validator->getError('reg_mod_lozinka'),
+                 'biografija_errors'=>$this->validator->getError('reg_mod_biografija')
+               ]);
+           } else {
 
             $dataKorisnik=[
                 "username" => $_POST["reg_mod_username"],
@@ -174,9 +207,22 @@ class Home extends BaseController{
                 ];
 
 
+            $moderatorModel=new ModeratorModel();
+            $zahtevmoderatoraModel=new ZahtevModeratoraModel();
+            $igracModel=new IgracModel();
+
+            $moderatori= $moderatorModel->nadji_email($_POST["reg_mod_email"]);
+            if (!empty($moderatori))  {   $_SESSION['emailPoruka']="Vec postoji nalog sa ovim email-om!"; return $this->prikaz('registracijaModeratora',[]); }
+
+
+            $zmod= $zahtevmoderatoraModel->nadji_email($_POST["reg_mod_email"]);
+            if (!empty($zmod))  {   $_SESSION['emailPoruka']="Vec postoji nalog sa ovim email-om!"; return $this->prikaz('registracijaModeratora',[]); }
+
+
+            $i= $igracModel->nadji_email($_POST["reg_mod_email"]);
+            if (!empty($i))  {   $_SESSION['emailPoruka']="Vec postoji nalog sa ovim email-om!"; return $this->prikaz('registracijaModeratora',[]); }
 
             $korisnikModel=new KorisnikModel();
-            $zahtevmoderatoraModel=new ZahtevModeratoraModel();
             $username=$_POST["reg_mod_username"];
             $usernameBaza=$korisnikModel->where("username",$username)->findAll();
             $usernameBazaZahtev=$zahtevmoderatoraModel->where("username",$username)->findAll();
@@ -220,14 +266,35 @@ class Home extends BaseController{
             }
 
 
-
+}
         }
 
 
 
 
         public function registrujIgraca(){
-            //return $this->prikaz("login", []);
+          $rules = ['reg_username' => 'max_length[45]',
+            'reg_lozinka' => 'max_length[45]',
+            'reg_ime' => 'alpha|max_length[45]',
+            'reg_prezime' => 'alpha|max_length[45]',
+        ];
+
+        $errors = [
+            'reg_username' => ['max_length' => "Unesite kraci username"],
+            'reg_lozinka' => ['max_length' => "Unesite kracu lozinku"],
+            'reg_ime' => ['alpha' => "Ime sadrzi specijalne karaktera",
+                               'max_length' => "Ime sadrzi previse karaktera"],
+            'reg_prezime' => ['alpha' => "Prezime sadrzi specijalne karaktera"
+                                 ,'max_length' => "Prezime sadrzi previse karaktera"]
+        ];
+        if (!$this->validate($rules, $errors)) {
+            return $this->prikaz('registracijaIgraca',[
+              'username_errors'=>$this->validator->getError('reg_username'),
+              'ime_errors'=>$this->validator->getError('reg_ime'),
+              'prezime_errors'=>$this->validator->getError('reg_prezime'),
+              'lozinka_errors'=>$this->validator->getError('reg_lozinka'),
+            ]);
+        } else {
 
             $dataKorisnik=[
                 "username" => $_POST["reg_username"],
@@ -247,6 +314,23 @@ class Home extends BaseController{
                 "poeniTrenutni"=>0,
                 "blokirani"=> 0
                 ];
+
+                $moderatorModel=new ModeratorModel();
+                $zahtevmoderatoraModel=new ZahtevModeratoraModel();
+                $igracModel=new IgracModel();
+
+                $moderatori= $moderatorModel->nadji_email($_POST["reg_email"]);
+                if (!empty($moderatori))  {   $_SESSION['email']="Vec postoji nalog sa ovim email-om!"; return $this->prikaz('registracijaIgraca',[]); }
+
+
+                $zmod= $zahtevmoderatoraModel->nadji_email($_POST["reg_email"]);
+                if (!empty($zmod))  {   $_SESSION['email']="Vec postoji nalog sa ovim email-om!"; return $this->prikaz('registracijaIgraca',[]); }
+
+
+                $i= $igracModel->nadji_email($_POST["reg_email"]);
+                if (!empty($i))  {   $_SESSION['email']="Vec postoji nalog sa ovim email-om!"; return $this->prikaz('registracijaIgraca',[]); }
+
+
 
             $korisnikModel=new KorisnikModel();
             $username=$_POST["reg_username"];
@@ -291,6 +375,81 @@ class Home extends BaseController{
 
         }
 
-	//--------------------------------------------------------------------
+}
+
+
+            //////////////////////////////////////////ZABORAVLJENA LOZINKA//////////////
+            public function zaboravljenalozinka() {
+                $this->prikaz("mod_zaboravljenalozinka", []);
+            }
+
+            public function emailSubmit($address, $subject, $message, $korisnik) {
+        $headers = "Reply-To: MasterMinds Oceans4 masterminds.kviz@gmail.com\r\n";
+        	 $headers .= "Return-Path: MasterMinds Oceans4 masterminds.kviz@gmail.com\r\n";
+        	 $headers .= "From:  masterminds.kviz@gmail.com" ."\r\n" ;
+        	 $headers .= "X-Mailer: PHP". phpversion() ."\r\n" ;
+
+                if (mail($address, $subject, $message, $headers)) {
+
+                 $this->prikaz("mod_zaboravljenalozinka", ['notification'=>"{$korisnik['ime']} provjerite email"]);
+                 } else {
+                           $this->prikaz("mod_zaboravljenalozinka", ['errors'=>" {$korisnik['ime']} nije poslat email"]);
+                }
+            }
+
+            public function reset() { //ulazi se sa mejla
+               $data['tokan'] = $_GET['tokan'];
+               $_SESSION['tokan']=$data['tokan'];
+                $this->prikaz("mod_novalozinka", []);
+            }
+
+
+            public function resetLink() {
+                $email = $_POST['email'];
+                $moderatorModel = new ModeratorModel();
+                $moderatori = $moderatorModel->nadji_email($email);
+                if (!empty($moderatori)) {
+                    $tokan = rand(1000, 9999);
+                        $kModel=new KorisnikModel();
+                        $kModel->postavi_tokanpassword($tokan, $moderatori[0]['idKM']);
+                        $message = "Molimo Vas da kliknete na ". base_url('Home/reset?tokan='). $tokan. " za promjenu lozinke. ";
+                       $this->emailSubmit($email, 'Promjena lozinke', $message,$moderatori[0]);
+
+                } else {
+                    $igracModel = new IgracModel();
+                    $igraci = $igracModel->nadji_email($email);
+                    if (!empty($igraci)) {
+                    if ($igraci[0]['blokirani'] == 0){
+                         $tokan = rand(1000, 9999);
+                        $kModel=new KorisnikModel();
+                        $kModel->postavi_tokanpassword($tokan, $igraci[0]['idKI']);
+                       $message = "Molimo Vas da kliknete na ". base_url('Home/reset?tokan='). $tokan. " za promjenu lozinke. ";
+                    $this->emailSubmit($email, 'Promjena lozinke', $message, $igraci[0]);
+                  }else{ $this->prikaz("mod_zaboravljenalozinka", ['errors'=>"Vi ste blokiran igrac"]);}
+
+                    } else {
+                           $this->prikaz("mod_zaboravljenalozinka", ['errors'=>"Netacan email"]);
+                    }
+                }
+
+
+            }
+
+            public function zapamtinovulozinku(){
+                $tokan=$_SESSION['tokan'];
+                $password1=$_POST['password1'];
+                $password2=$_POST['password2'];
+
+                if ($password1 != $password2)
+                {
+                 $this->prikaz("mod_novalozinka", ['errors'=>"Lozinke se ne poklapaju"]);
+                }
+                else{
+                    $kModel= new KorisnikModel();
+                    $kModel->updatepassword($password1,$tokan);
+                $this->prikaz("login", []);
+
+                }
+            }
 
 }

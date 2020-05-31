@@ -16,7 +16,7 @@
 */
 function dohvati_zahtjeve(){
 $.ajax({
-url: "../../index.php/Admin/dohvati_zahtjeve",
+url: "../../Admin/dohvati_zahtjeve",
 method:"post",
 dataType: "json",
 error: function(ts) { alert(ts.responseText) },
@@ -73,7 +73,7 @@ success: function(data) {
 dohvati_zahtjeve();
 }
 });
-});//end_insert_zahtjev
+});//end_insert_zahtjev..
 
 
 </script>

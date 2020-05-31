@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> Obavjesti Igraca </title>
+<title> Obavijesti Igraca </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -53,24 +53,24 @@ return false;
 
 <tr>
 <td>
-<label  style = "color: white"> <i>Email:</i> </label>
+<label  style = "color: white"> <i>Username:</i> </label>
 </td>
 </tr>
 
 <tr>
 <td>
-<input    name="email" style = "background: transparent; font-weight: bold; width: 60%; color: white; "  placeholder="Molim Vas unesite e-mail" value = "<?php   if(!empty($email)) echo $email; ?>" >
+<input    name="username" style = "background: transparent; font-weight: bold; width: 60%; color: white; "  placeholder="Molim Vas unesite username" value = "<?php   if(!empty($username)) echo $username; ?>" >
 </td>
 </tr>
 
 <tr style = "color: red;">
 <td>
 <?php
-if(!empty($errors['email']))
-echo $errors['email'];
-else if(!empty($email_greska))
+if(!empty($errors['username']))
+echo $errors['username'];
+else if(!empty($username_greska))
 {
-echo $email_greska;
+echo $username_greska;
 }
 ?>
 </td>

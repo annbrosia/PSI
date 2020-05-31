@@ -19,34 +19,36 @@ use App\Models\PitanjeModel;
  * @author Ana
  */
 class Trening extends BaseController{
-     public function dohvatiPitanjeTrening($svaPitanja){
-            //echo "<script>console.log('Sva pitanja: " . $svaPitanja[$r] . "' );</script>";
-            $r=rand(0,19);
+
+     public function dohvatiPitanjeTrening(){
+       $svaPitanja = $_SESSION['pitanjaTrening'];
+       $r = $_SESSION['cntTrening'];
+
             //echo "<script>console.log('Rand: " . $r . "' );</script>";
             //echo "<script>console.log('Sva pitanja:: " . $svaPitanja[$r]['tekstPitanja']. "' );</script>";
             $_SESSION['tekstTrening']=$svaPitanja[$r]['tekstPitanja'];
             $_SESSION['tacanTrening']=$svaPitanja[$r]['tacan'];
             $k=rand(1,4);
             switch ($k){
-                case 1: 
+                case 1:
                         $_SESSION['tacan1Trening']=$svaPitanja[$r]['tacan'];
                         $_SESSION['netacan1Trening']=$svaPitanja[$r]['netacan1'];
                         $_SESSION['netacan2Trening']=$svaPitanja[$r]['netacan2'];
                         $_SESSION['netacan3Trening']=$svaPitanja[$r]['netacan3'];
                         break;
-                case 2: 
+                case 2:
                         $_SESSION['tacan1Trening']=$svaPitanja[$r]['netacan1'];
                         $_SESSION['netacan1Trening']=$svaPitanja[$r]['tacan'];
                         $_SESSION['netacan2Trening']=$svaPitanja[$r]['netacan2'];
                         $_SESSION['netacan3Trening']=$svaPitanja[$r]['netacan3'];
                         break;
-                case 3: 
+                case 3:
                         $_SESSION['tacan1Trening']=$svaPitanja[$r]['netacan1'];
                         $_SESSION['netacan1Trening']=$svaPitanja[$r]['netacan2'];
                         $_SESSION['netacan2Trening']=$svaPitanja[$r]['tacan'];
                         $_SESSION['netacan3Trening']=$svaPitanja[$r]['netacan3'];
                         break;
-                case 4: 
+                case 4:
                         $_SESSION['tacan1Trening']=$svaPitanja[$r]['netacan1'];
                         $_SESSION['netacan1Trening']=$svaPitanja[$r]['netacan2'];
                         $_SESSION['netacan2Trening']=$svaPitanja[$r]['netacan3'];
@@ -55,70 +57,100 @@ class Trening extends BaseController{
 
             }
         }
+
+
+        public function niz_random_pitanja_trening($id)
+        {
+          $pitanjeModel=new PitanjeModel();
+          $svaPitanja=$pitanjeModel->where("idKat",$id)->findAll();
+          $ukupno = count($svaPitanja);
+          $niz_odabran_flag = array();   //kad izaberemo neko pitanje stavimo na 1
+          $niz_odabranih_pitanja = array(); //smjestamo pitanja koja smo odabrali;
+          for($i=0; $i<$ukupno; $i++)
+          {
+              $niz_odabran_flag[$i]=0;
+          }
+
+          $cnt = 0;      //koliko smo ih uspjesno stavili
+          if( $ukupno >= 10)
+          $max = 10;              //moze da se desi da u bazi imamo manje od 10 pitanja, posto pitanja mogu da se brisu
+          else
+          $max = $ukupno;
+          $_SESSION['maxTrening'] = $max;
+          while($cnt != $max) //sve dok ne odaberemo svih 10 pitanja
+         {
+           $i = rand(0,$ukupno-1);
+           while($niz_odabran_flag[$i] == 1) //ako smo odabrali mjesto koje smo prethodno odabrali ponavljamo
+           {
+             $i = rand(0,$ukupno-1);
+           }
+            $niz_odabran_flag[$i] = 1;
+            $niz_odabranih_pitanja[$cnt] = $svaPitanja[$i];
+            $cnt++;
+          }//end_while_cnt
+          return   $niz_odabranih_pitanja;
+        }//end_function
+
+
         public function treningPrikaz($id) {
-            echo "<script>console.log('Id: " . $id . "' );</script>";
             $_SESSION['nnn']=$id;
-            echo "<script>console.log('id u trening prikaz:: " . $_SESSION['nnn']. "' );</script>";
-            $_SESSION['cntTrening']=1;
-            //dohvatanje pitanja iz odredjene kategorije
-            $pitanjeModel=new PitanjeModel();
-            $svaPitanja=$pitanjeModel->where("idKat",$id)->findAll();
-            $this->dohvatiPitanjeTrening($svaPitanja);
+            $_SESSION['maxTrening'] = 0;
+            $_SESSION['pitanjaTrening'] = $this->niz_random_pitanja_trening($id);
+            $_SESSION['cntTreningTacno'] = 0;
+            $_SESSION['cntTrening']=0;
+  if(sizeof($_SESSION['pitanjaTrening']) !=0)
+  {
+            $_SESSION['tekstTrening'] = $_SESSION['pitanjaTrening'][0]['tekstPitanja'];
+            $_SESSION['tacan1Trening'] = $_SESSION['pitanjaTrening'][0]['tacan'];
+            $_SESSION['tacanTrening'] = $_SESSION['pitanjaTrening'][0]['tacan'];
+            $_SESSION['netacan1Trening'] = $_SESSION['pitanjaTrening'][0]['netacan1'];
+            $_SESSION['netacan2Trening'] = $_SESSION['pitanjaTrening'][0]['netacan2'];
+            $_SESSION['netacan3Trening'] = $_SESSION['pitanjaTrening'][0]['netacan3'];
             return $this->prikaz("trening", []);
-            
-            
+   }
+   else  return $this->prikaz("igrac", []); //ako nema nijedno pitanje vratimo ga na njegovu pocetnu
+
         }
-        public function treningPrikazDrugi($id) {
-            $_SESSION['cntTrening']=$_SESSION['cntTrening']+1;
-            echo "<script>console.log('cnt: " . $_SESSION['cntTrening'] . "' );</script>";
-            if($_SESSION['cntTrening']==11) {
-                echo "<script>console.log('11' );</script>";
-//                *********************** ovde se dodaje pop-up o broju poena*****************************
-                $db= \Config\Database::connect();
-                $builder=$db->table("igrac");
-                $builder->set('poeniTrenutni', '0', FALSE);
-                $builder->where('idKI', $_SESSION['ulogovaniKorisnikId']);
-                $builder->update(); 
-                return $this->prikaz("igrac", []); 
-            }
-            $pitanjeModel=new PitanjeModel();
-            $svaPitanja=$pitanjeModel->where("idKat",$id)->findAll();
-            $this->dohvatiPitanjeTrening($svaPitanja);
-            return $this->prikaz("trening", []);   
-        }
-        public function takmicenjePrikazDrugi(){
-            $_SESSION['cnt']=$_SESSION['cnt']+1;
-            if($_SESSION['cnt']==11) {
-                
-//                *********************** ovde se dodaje pop-up o broju poena*****************************
-                $db= \Config\Database::connect();
-                $builder=$db->table("igrac");
-                $builder->set('poeniTrenutni', '0', FALSE);
-                $builder->where('idKI', $_SESSION['ulogovaniKorisnikId']);
-                $builder->update(); 
-                return $this->prikaz("igrac", []); 
-            }
-            $this->dohvatiPitanje();
-            return $this->prikaz("takmicenje", []);   
-	}
+
+
+
         public function izracunajPoeneTrening(){
+          if(!empty($_POST['izbor']))
+          {
             $izabrano= $_POST['izbor'];
-            $db= \Config\Database::connect();
-            $builder=$db->table("igrac");
-            
-            if($izabrano==$_SESSION['tacanTrening']){
-                
-                $builder->set('poeniTrenutni', 'poeniTrenutni+1', FALSE);
-                $builder->where('idKI', $_SESSION['ulogovaniKorisnikId']);
-                $builder->update(); 
+          }
+            else
+          {
+              $izabrano = "";
+          }
+            /*$db= \Config\Database::connect();
+            $builder=$db->table("igrac");*/
+            $_SESSION['izabran_odgovor_trening'][$_SESSION['cntTrening']] = $izabrano;
+
+                   if($izabrano==$_SESSION['tacanTrening']){
+                       $_SESSION['cntTreningTacno']= $_SESSION['cntTreningTacno']+1;
+                     }
+
+                       $_SESSION['cntTrening']=$_SESSION['cntTrening']+1;
+                       if($_SESSION['cntTrening']>=$_SESSION['maxTrening']){
+                           //******************************ovde pop up o broju poena***************$_SESSION['cntGostaTacno']
+                           return redirect()->to("rjesenja");
+                       }
+                       else {
+                         $this->dohvatiPitanjeTrening();
+                         return $this->prikaz("trening", []);
+                       }
             }
-            echo "<script>console.log('id u izracunaj:: " . $_SESSION['nnn']. "' );</script>";
-            $this->treningPrikazDrugi($_SESSION['nnn']);
-            
-            
-        }
-        public function prikaz($page,$data){
+
+
+            public function rezultati_bodovi_trening()
+            {
+               return $this->prikaz("prikaz_odgovora_trening", []);
+            }
+
+          public function prikaz($page,$data){
             $data['controller']='Home';
-            echo view("stranice/$page",$data);
-        }
-}
+             echo view("stranice/$page",$data);
+          }
+
+}//end_controller

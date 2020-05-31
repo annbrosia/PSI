@@ -21,13 +21,15 @@ class Moderator extends BaseController {
         $this->prikaz("moderator", []);
     }
 
-//////////////////////////////////////////////////////////ODJAVA////////////////
-    public function logout() {
-        $this->session->destroy();
-
-        return redirect()->to(site_url('Home'));
+    public function index() {
+        $this->prikaz("moderator", []);
     }
 
+///////////////////////////////////////////ODJAVA///////////////////////////////
+   /*public function odjava()
+   {
+       parent::odjava();
+   }*/
     //////////////////////////////////////////////DODAJ PITANJE////////////////
     public function dodajpitanje() {
         $this->prikaz("mod_dodajpitanje", []);
@@ -158,6 +160,16 @@ public function obrisi_pitanje()
   }
 }//end_obrisi_pitanje
 
+////////////////////////////////////////////RANG LISTA//////////////////////
+public function rang() {
+    $iModel = new IgracModel();
+    $najbolji = $iModel->najbolji();
+    $kModel=new KorisnikModel();
+    $usernames= $kModel->nadji_niz($najbolji);
+    $this->prikaz("mod_ranglista", ['najbolji' => $najbolji,
+                           'usernames'=> $usernames]);
+
+    }
 
 
 }

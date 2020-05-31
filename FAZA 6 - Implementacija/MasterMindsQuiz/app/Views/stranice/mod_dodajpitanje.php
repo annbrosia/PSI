@@ -8,7 +8,7 @@
         <link rel='stylesheet' type="text/css" href="<?php echo base_url('css/stil.css'); ?>">
     </head>
 
-    
+
     <body>
         <div class='container'>
             <div class='row'>
@@ -19,7 +19,8 @@
             <div class='row'>
                 <div class='col-sm-3 text-center '>
 
-                    <img src="<?php echo base_url('slike/logo.png'); ?>" width='125%' >
+
+                <img src="<?php echo base_url('slike/logo_master.png'); ?>" style = "width: '100%'; margin-top: 60px; " >
                 </div>
                 <div class="loginBox" style ="height:600px;">
                     <div class = "naslov_mastermind"> <h2> Dodaj pitanje: </h2></div>

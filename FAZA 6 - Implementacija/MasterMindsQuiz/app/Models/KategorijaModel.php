@@ -8,7 +8,7 @@ class KategorijaModel extends Model
 {
     protected $table = 'kategorija';
     protected $primaryKey = 'idKategorije';
-    protected $returnType = 'object';
+    protected $returnType = 'array';
     protected $allowedFields = ['idKategorije', "naziv"];
 
       public function nadji_kategoriju($idKategorije)
@@ -19,6 +19,6 @@ class KategorijaModel extends Model
          public function kategorija_toString($idKategorije)
         {
         $k= $this->where('idKategorije', $idKategorije)->findAll();
-        return $k[0]->naziv;
+        return $k[0]['naziv'];
         }
 }

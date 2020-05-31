@@ -23,7 +23,12 @@
                         <td>
                             <p style="font-size:11px" style="background-color:white">
 
-                            <?php if(!empty($_SESSION['username']))
+                            <?php
+                             if(!empty($username_errors))
+                            echo $username_errors." ";
+
+
+                            if(!empty($_SESSION['username']))
                                echo $_SESSION['username'];
                                 $_SESSION['username']="";
                             ?>
@@ -39,12 +44,38 @@
                         <td> <p>Ime </p> </td>
                         <td> <input type="text"  id="prov2" value="<?php if(!empty($_SESSION['ime1'])) echo $_SESSION['ime1']; $_SESSION['ime1']=""; ?>" name = "reg_ime" placeholder="Unesite Ime" required></td>
                     </tr>
+                    <tr>
+                       <td>
+                           <p style="font-size:11px" style="background-color:white">
 
+                           <?php      if(!empty($ime_errors))
+                               echo $ime_errors;
+                           ?>
+
+
+                       </p>
+                       </td>
+
+
+                   </tr>
                     <tr>
                         <td><p>Prezime </p></td>
                         <td><input class = "form-control"  id="prov3"  type="text" value="<?php if(!empty($_SESSION['prezime1'])) echo $_SESSION['prezime1']; $_SESSION['prezime1']=""; ?>" name = "reg_prezime" placeholder="Unesite Prezime" required="" > </td>
                      </tr>
+                     <tr>
+                        <td>
+                            <p style="font-size:11px" style="background-color:white">
 
+                            <?php  if(!empty($prezime_errors))
+                                echo $prezime_errors;
+                            ?>
+
+
+                        </p>
+                        </td>
+
+
+                    </tr>
                      <tr>
                         <td><p>E-mail </p> </td>
                         <td><input class = "form-control"  id="prov5" type="email" name = "reg_email" placeholder="Unesite E-mail" value="<?php if(!empty($_SESSION['email1'])) echo $_SESSION['email1']; $_SESSION['email1']=""; ?>" required= "" > </td>
@@ -68,7 +99,20 @@
                         <td>  <p>Lozinka </p> </td>
                         <td> <input type="password"  id="prov4" name = "reg_lozinka" placeholder="Unesite Lozinku" required> </td>
                      </tr>
+                     <tr>
+                        <td>
+                            <p style="font-size:11px" style="background-color:white">
 
+                            <?php  if(!empty($lozinka_errors))
+                                echo $lozinka_errors;
+                            ?>
+
+
+                        </p>
+                        </td>
+
+
+                    </tr>
                      <tr> </tr>
                         <td colspan = "2">
                             <input type="submit" name = "klik_reg" value="Registruj se" >

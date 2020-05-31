@@ -9,7 +9,7 @@
         <div class="loginBox" style ="height:360px;">
             <img src="<?php echo base_url('slike/pink.png'); ?>" class="user">
             <div class = "naslov_mastermind"> <h2> Nova lozinka </h2></div>
-            <form action="<?= base_url('Igrac/zapamtinovulozinku') ?>" method="post">
+            <form action="<?= base_url('Home/zapamtinovulozinku') ?>" method="post">
 
                 <input type="password" name = "password1" id="password1" required="required" placeholder="Unesite novu lozinku">
 

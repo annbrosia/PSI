@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <title> Master Minds</title>
@@ -10,7 +9,7 @@
         <div class="loginBox">
             <img class="user" src="<?php echo base_url('slike/pink.png')?>">
             <div class = "naslov_mastermind"> <h2> Master Minds </h2></div>
-            <form name="loginForma" method="get" action="<?= site_url("Home/submit")?>">
+            <form name="loginForma" method="post" action="<?= site_url("Home/submit")?>">
                 <input type="text"  value="<?php if(!empty($_SESSION['user'])) echo $_SESSION['user']; $_SESSION['user']=""; ?>" name = "korIme" placeholder="Korisnicko ime" required>
                 <p style="font-size:11px">
 
@@ -33,7 +32,7 @@
 
                 <div class = 'words_login'>
                   <i>
-                    <p>Zaboravili ste lozinku?   <a href="<?= base_url('Igrac/zaboravljenalozinka');?>">  Lozinka </a></p>
+                    <p>Zaboravili ste lozinku?   <a href="<?= base_url('Home/zaboravljenalozinka');?>">  Lozinka </a></p>
                     <p> Nemate nalog?  <a href="<?= site_url("Home/regIg")?>"> Registracija igraca</a> </p>
                     <p> Zelite biti moderator?   <a href="<?= site_url("Home/regMod")?>"> Registracija moderatora</a>  </p>
                   </i>

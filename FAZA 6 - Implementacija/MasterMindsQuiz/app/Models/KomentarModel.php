@@ -13,7 +13,8 @@ class KomentarModel extends Model
 {
         protected $table      = 'komentar';
         protected $primaryKey = 'idKomentara';
-        protected $returnType = 'object';
+        protected $returnType = 'array';
+        protected $allowedFields = ['idKomentara', "tekstKomentara", "idKKom"];
 
         /**
           * dohvati_komentare funkcija koja dohvata odredjen broj komentara korisnika
@@ -36,5 +37,22 @@ class KomentarModel extends Model
           return null;
         }//end_dohvati_komentare
 
+
+                /**
+                  * nadji_poslednjiId funkcija za trazenje najveceg id-a pitanja
+                  *
+                  * @return int
+                 */
+            public function nadji_poslednjiId()
+            {
+                  $this->selectMax('idKomentara');
+                  $query = $this->get();
+                  $row = $query->getRow();
+                  if($row!==null)
+                  {
+                   return $row->idKomentara;
+                  }
+                  else return 0;
+                }
 
 }//end_KomentarModel

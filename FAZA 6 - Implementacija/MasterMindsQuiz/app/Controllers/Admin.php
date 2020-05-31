@@ -309,45 +309,57 @@ public function obrisi_pitanje()
 
 	///////////////////////////////////EMAIL///////////////////////////////////////////////////
 	/**
-  			* ukupno_komentara funkcija za validaciju podataka i slanje maila
+  			* emailSubmit funkcija za validaciju podataka i slanje maila
   			*
   			* @return View
   */
 	public function emailSubmit()
  {
 
-	 $rules = ['email'=>'required|valid_email', 'message'=>'required'];
+	 $rules = ['username'=>'required', 'message'=>'required'];
 	 $errors = [
 	  'message' => [
 	  'required' => 'Unesite poruku',
 	              ],
-	  'email'    => [
-	         'required' => "Unesite mail",
-	          'valid_email' => "Unesite validan mail",
+	  'username'    => [
+	         'required' => "Unesite username",
 	                ]
 	    ];
 	 if(!$this->validate($rules, $errors)){
-	   $greska = $this->validator->getError('email');
-	   $polje_email = "";
-	   if($greska != "Unesite validan mail")  $polje_email=$this->request->getVar('email');
+	   $greska = $this->validator->getError('username');
+	   $polje_username = "";
+	   if($greska != "Unesite username")  $polje_username=$this->request->getVar('username');
 	    return  view('stranice/admin_obavjesti_kor.php',
 	         ['errors'=>$this->validator->getErrors(),
-	          'email' =>$polje_email,
+	          'username' =>$polje_username,
 	          'poruka' => $this->request->getVar('message')
 	        ]);
 	 }
-	 $IgracModel=new IgracModel();
-	 $igrac_email= $IgracModel->postoji_li_email($this->request->getVar('email'));
-	 if($igrac_email==null)
+
+	 //na osnovu username nadji id i onda u tabeli igrac na osnovu id nadji email
+	 $kModel= new KorisnikModel();
+	 $korisnici=$kModel->nadji_username($this->request->getVar('username'));
+
+	 if($korisnici==null)
 	 {
 	   return  view('stranice/admin_obavjesti_kor.php',
-	        ['email_greska'=>'Unijeti e-mail ne odgovara nijednom igracu. Unesite postojeci email.',
-	         'email' => '',
+	        ['username_greska'=>'Unijeti username ne odgovara nijednom korisniku. Unesite postojeci username.',
+	         'username' => '',
 	         'poruka' => $this->request->getVar('message')
 	       ]);
 	 }
 
-$to_email = $this->request->getVar('email');
+$IgracModel=new IgracModel();
+$igrac = $IgracModel->nadji_igraca($korisnici[0]['idKorisnika']);
+if($igrac==null)
+{ // ako neko unese username korisnika ali taj korisnik nije igrac nego admin ili moderator
+	return  view('stranice/admin_obavjesti_kor.php',
+			 ['username_greska'=>'Unijeti username ne odgovara nijednom igracu. Unesite postojeci username igraca.',
+				'username' => '',
+				'poruka' => $this->request->getVar('message')
+			]);
+}
+$to_email=$igrac[0]['email'];
 $subject = "Kviz 'MasterMinds' Obavjestenje";
 $body = $this->request->getVar('message');
 $headers = "Reply-To: MasterMinds Oceans4 masterminds.kviz@gmail.com\r\n";
@@ -419,23 +431,25 @@ public function delete_igrac()
 }//end_delete_igrac
 
 //////////////////////////////////////////////ODJAVA/////////////////////////////////////
-   public function odjavi_admina()
-   {
-			$db= \Config\Database::connect();
-			$builder=$db->table("korisnik");
-			$builder->set('aktivan', '0', FALSE);
-			$builder->where('username', $_SESSION['ulogovaniKorisnik']);
-			$builder->update();
-			$_SESSION['ulogovaniKorisnik']="";
-			$_SESSION['tip_ulogovan']="";
-			$_SESSION['admin']="";
+	/* public function odjava()
+	 {
+		 parent::odjava();
+	 }*/
 
-			return $this->prikaz("login", []);
-   }
-
+//////////////////////////////////////////////PRIKAZ/////////////////////////////////////
 	 public function prikaz($page,$data)
 	 {
 	 		echo view("stranice/$page",$data);
 	 }
 
+	 ////////////////////////////////////////////RANG LISTA//////////////////////
+ 	public function rang() {
+ 			$iModel = new IgracModel();
+ 			$najbolji = $iModel->najbolji();
+ 			$kModel=new KorisnikModel();
+ 			$usernames= $kModel->nadji_niz($najbolji);
+ 			$this->prikaz("mod_ranglista", ['najbolji' => $najbolji,
+ 														 'usernames'=> $usernames]);
+
+ 			}
 }//end_controller
