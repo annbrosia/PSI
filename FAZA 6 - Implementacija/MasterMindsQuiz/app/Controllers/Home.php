@@ -11,6 +11,9 @@ use App\Models\AdminModel;
 class Home extends BaseController{
 
       	public function index(){
+          $_SESSION['poruka_preporuka'] = '';
+          $_SESSION['motivaciona'] = '';
+          $_SESSION['kviz_end'] = 0;
             return $this->prikaz("login", []);
 	      }
 
@@ -23,6 +26,7 @@ class Home extends BaseController{
       	}
 
         public function gost(){
+          $_SESSION['kviz_end'] = 0;
             return $this->prikaz("gost", []);
 	      }
 
@@ -51,6 +55,10 @@ class Home extends BaseController{
     $_SESSION['admin']="";
     $_SESSION['moderator']="";
     $_SESSION['tip_ulogovan']="";
+    $_SESSION['kviz_end'] = 0;
+    $_SESSION['poruka_preporuka'] = '';
+    $_SESSION['motivaciona'] = '';
+
     return redirect()->to("index");
   }
 
@@ -99,6 +107,7 @@ class Home extends BaseController{
                       $m = $mModel->nadji_moderatora($korisnik[0]['idKorisnika']);
                       $this->session->set('moderator', $m[0]);
                       $this->session->set('tip_ulogovan', 'moderator');
+                      $_SESSION['kviz_end'] = 0;
                       return $this->prikaz ("moderator", []);
                     }
                     else if($ulogaBaza=="admin")
@@ -107,6 +116,7 @@ class Home extends BaseController{
                       $a = $aModel->nadji_admina($korisnik[0]['idKorisnika']);
                       $this->session->set('admin', $a[0]);
                       $this->session->set('tip_ulogovan', 'admin');
+                      $_SESSION['kviz_end'] = 0;
                       return $this->prikaz ("administrator", []);
                     }
                     else

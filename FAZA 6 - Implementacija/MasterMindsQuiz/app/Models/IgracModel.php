@@ -100,6 +100,8 @@ class IgracModel extends Model
 
      public function najbolji() {
 
+         $this->join('korisnik', 'igrac.idKI = korisnik.idKorisnika');
+         $this->where('obrisan=', '0');
          $svi = $this->findAll();
          usort($svi, array($this, "cmp"));
          return $svi;

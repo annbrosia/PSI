@@ -14,7 +14,7 @@
         <div class="container">
             <div class='row'>
                 <div class='col-sm-3'>
-                    <p id='par1'>Ulogovan moderator</p>
+                    <p id='par1'></p>
                     <br>
                     <br>
                     <br>
@@ -44,15 +44,14 @@
 
         <br>
                 <center>  <h2><i>Dobrodosli, <?php  if(!empty($_SESSION['ulogovaniKorisnik'])) echo $_SESSION['ulogovaniKorisnik']; ?> !</i></h2></center>
-                  Stekni znanje na zabavan nacin:
+                  Vasa uloga na ovom sajtu je uloga moderatora:
                   <br />
                   <p id='p1'>
-                      Sva pitanja i zadaci koji se postavljaju u kvizu preuzeti su iz zvanične literature,
-                      tako da je verodostojnost tačnih odgovora na najvišem nivou.
+                    Mozete da postavljate razlicita pitanja <u>iskljucivo</u> iz kategorije za koju ste se prijavili. Morate da vodite racuna o vjerodostojnosti
+                    tacnih odgovora, jer ako vasa pitanja ne budu u skladu sa politikom sajtom, mozete biti uklonjeni.
                   </p>
                   <p>
-                      Ukoliko ste registrovani korisnik, imate mogucnost da unapredite svoje znanje u delu <b>trening</b> , pre nego sto se oprobate u
-                      takmicenju. Ako ste samo gost, da biste vezbali, potrebno je da se registrujete.
+                    Naravno, imate i mogucnost da uklonite neko od pitanja koje ste prethodno postavili, kao i da budete u toku sa desavanjima na sajtu, zato imate mogucnost pregleda rang liste.
                       <br>
                   </p>
                   <br>

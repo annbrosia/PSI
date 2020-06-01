@@ -9,7 +9,7 @@
   <div class='container'>
               <div class='row'>
                     <div class='col-sm-3'>
-                        <p id='par1'>Ulogovan gost</p>
+                        <p id='par1'></p>
                         <img src="<?php echo base_url('slike/logo_master.png'); ?>" style = "width: '100%'; margin-top: 110px; " >
                       </div> <!--div col za sliku-->
                       <div class='col-sm-8 text-center'>

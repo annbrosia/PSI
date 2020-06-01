@@ -68,6 +68,17 @@ public function rezultati_bodovi()
 
     public function takmicenjePrikaz(){
 
+            $provjera_datum = false;
+            $_SESSION['vecigrodanas']=0;
+            $datum = date("Y-m-d");
+            $RezultatModel = new RezultatModel();
+            $provjera_datum = $RezultatModel->postoji_li_datum($datum, $_SESSION['ulogovaniKorisnikId']);
+            if($provjera_datum == -1)
+            {
+              $_SESSION['vecigrodanas'] = 1;
+              return $this->prikaz("takmicenje", []);
+            }
+
             $_SESSION['trenutnoIgra']='igrac';
             $_SESSION['maxTakmicenje']=0;
             $_SESSION['tacnoIgraca']=0;
@@ -108,11 +119,14 @@ public function rezultati_bodovi()
         $_SESSION['cntGosta']=0;
         $_SESSION['pitanja'] = $this->niz_random_pitanja();
         $_SESSION['kviz_end'] = 0;
+        $_SESSION['motivaciona'] = "";
+        $_SESSION['poruka_preporuka'] = "";
+
         if(sizeof($_SESSION['pitanja']) !=0)
         {
-        $_SESSION['tekst'] = $_SESSION['pitanja'][0]['tekstPitanja'];
+        $_SESSION['tekst'] =  $_SESSION['pitanja'][0]['tekstPitanja'];
         $_SESSION['tacan1'] = $_SESSION['pitanja'][0]['tacan'];
-        $_SESSION['tacan'] = $_SESSION['pitanja'][0]['tacan'];
+        $_SESSION['tacan'] =  $_SESSION['pitanja'][0]['tacan'];
         $_SESSION['netacan1'] = $_SESSION['pitanja'][0]['netacan1'];
         $_SESSION['netacan2'] = $_SESSION['pitanja'][0]['netacan2'];
         $_SESSION['netacan3'] = $_SESSION['pitanja'][0]['netacan3'];
@@ -213,7 +227,6 @@ public function rezultati_bodovi()
                 $builder->update();
            }
            else {
-             echo $_SESSION['kategorija'];
 
                switch ($_SESSION['kategorija']){
                    case 1: $_SESSION['serijeK1'] = 1; break;
@@ -229,7 +242,7 @@ public function rezultati_bodovi()
          }
         //    print_r($_SESSION['izabran_odgovor']);
              $_SESSION['cnt']=$_SESSION['cnt']+1;
-             if($_SESSION['cnt']>=10) {
+             if($_SESSION['cnt']>=$_SESSION['maxTakmicenje']) {
                $_SESSION['kviz_end'] = 1;
                $db=\Config\Database::connect();
                $builder=$db->table("rezultati");

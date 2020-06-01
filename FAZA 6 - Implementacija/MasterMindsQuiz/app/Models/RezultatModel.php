@@ -14,4 +14,25 @@ class RezultatModel extends Model
         return $this->where('idKRez', $idIgraca)->findAll();
     } //ukupni poeni su u tabeli igrac
 
-}
+   public function reset_rezultati()
+   {
+      $query = $this->query("SELECT * FROM rezultati;");
+      foreach ($query->getResultArray() as $row)
+      {
+        $this->delete($row['idrezultati']);
+      }
+   }
+
+   public function postoji_li_datum($datum, $id)
+   {
+     $this->where('idKRez', $id);
+     $this->where('datum', $datum);
+     $query = $this->get();
+     $row = $query->getRow();
+     if(isset($row))
+     {
+      return -1;
+     }
+     else return 1;
+   }
+}//

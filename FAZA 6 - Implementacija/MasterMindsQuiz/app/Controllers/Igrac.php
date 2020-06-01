@@ -18,10 +18,12 @@ class Igrac extends BaseController {
 
 ///////////////////////////////////////////////////////////////POCETNA/////////
     public function home() {
+      $_SESSION['kviz_end'] = 0;
         $this->prikaz("igrac", []);
     }
 
     public function index() {
+      $_SESSION['kviz_end'] = 0;
         $this->prikaz("igrac", []);
     }
 
@@ -69,6 +71,7 @@ class Igrac extends BaseController {
           $_SESSION['admin']="";
           $_SESSION['moderator']="";
           $_SESSION['tip_ulogovan']="";
+
           return redirect()->to("index");
         }
 

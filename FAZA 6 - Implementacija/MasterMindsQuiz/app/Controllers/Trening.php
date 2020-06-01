@@ -98,6 +98,8 @@ class Trening extends BaseController{
             $_SESSION['pitanjaTrening'] = $this->niz_random_pitanja_trening($id);
             $_SESSION['cntTreningTacno'] = 0;
             $_SESSION['cntTrening']=0;
+            $_SESSION['kviz_end'] = 0;
+
   if(sizeof($_SESSION['pitanjaTrening']) !=0)
   {
             $_SESSION['tekstTrening'] = $_SESSION['pitanjaTrening'][0]['tekstPitanja'];
@@ -133,6 +135,8 @@ class Trening extends BaseController{
 
                        $_SESSION['cntTrening']=$_SESSION['cntTrening']+1;
                        if($_SESSION['cntTrening']>=$_SESSION['maxTrening']){
+                         $_SESSION['kviz_end'] = 1;
+
                            //******************************ovde pop up o broju poena***************$_SESSION['cntGostaTacno']
                            return redirect()->to("rjesenja");
                        }

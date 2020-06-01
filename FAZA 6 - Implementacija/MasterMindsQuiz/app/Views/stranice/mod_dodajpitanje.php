@@ -13,7 +13,7 @@
         <div class='container'>
             <div class='row'>
                 <div class='col-sm-3'>
-                    <p id='par1'>Ulogovan moderator</p>
+                    <p id='par1'></p>
                 </div>
             </div>
             <div class='row'>

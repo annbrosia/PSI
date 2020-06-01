@@ -50,15 +50,15 @@
 
 <br>
 <center>  <h2><i>Dobrodosli, <?php  if(!empty($_SESSION['ulogovaniKorisnik'])) echo $_SESSION['ulogovaniKorisnik']; ?> !</i></h2></center>
-  Stekni znanje na zabavan nacin:
+  Da biste mogli uspjesno da vodite Master Minds imate mogucnost:
   <br />
   <p id='p1'>
-      Sva pitanja i zadaci koji se postavljaju u kvizu preuzeti su iz zvanične literature,
-      tako da je verodostojnost tačnih odgovora na najvišem nivou.
+      Da izaberete zahtjeve onih koji zele da budu moderatori i da odobrite one koji vam se najvise svidjaju. Na taj nacin registrujete
+      moderatora.
   </p>
   <p>
-      Ukoliko ste registrovani korisnik, imate mogucnost da unapredite svoje znanje u delu <b>trening</b> , pre nego sto se oprobate u
-      takmicenju. Ako ste samo gost, da biste vezbali, potrebno je da se registrujete.
+      Takodje, imate mogucnost uklanjanja postojecih moderatora i njihovih pitanja, mozete da pogledate kako korisnici komentarisu ovaj sajt.
+     Mozete najbolje da obavjestite o ucescu u emisiju i da resetujete poene kad pronadjete <b><i>Master Mind-a</i></b>. 
       <br>
   </p>
   <br>

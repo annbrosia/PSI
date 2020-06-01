@@ -5,6 +5,8 @@ use App\Models\KorisnikModel;
 use App\Models\PitanjeModel;
 use App\Models\KomentarModel;
 use App\Models\IgracModel;
+use App\Models\RezultatModel;
+
 
 /**
 * Admin – klasa za administratorske aktivnosti
@@ -392,7 +394,9 @@ public function reset_poeni()
 {
 	$IgracModel = new IgracModel();
   $IgracModel->reset_poeni();
-  return "Poeni svih igraca su uspjesno resetovani";
+	$RezultatModel = new RezultatModel();
+	$RezultatModel->reset_rezultati();
+  return "Poeni i rezultati svih igraca su uspjesno resetovani";
 }//end_reset_poeni
 
 

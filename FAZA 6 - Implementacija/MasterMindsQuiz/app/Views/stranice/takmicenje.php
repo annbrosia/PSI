@@ -36,6 +36,7 @@
     </head>
     <body>
         <div class='container'>
+          <?php if($_SESSION['vecigrodanas'] == 0) { ?>
             <div class='row'>
                 <div class='col-sm-3'>
                   <img src="<?php echo base_url('slike/logo_master.png'); ?>" style = "width: '100%'; margin-top: 110px; " >
@@ -67,7 +68,7 @@
                                  <input class="form-check-input" type="radio" name="izbor" id="gridRadios1" value="<?php echo $_SESSION['tacan1']; ?>" >
                                  <label class="form-check-label" for="gridRadios1" style = ' width: 580px;'>
                                    <div class='form-group has-error has-feedback'>
-                                     <input type='text' class='form-control' name='izbor'  value= "  <?php if(!empty($_SESSION['tacan1']))
+                                     <input type='text' class='form-control' name='izbor'  value= "<?php if(!empty($_SESSION['tacan1']))
                                           echo $_SESSION['tacan1'];
                                       ?>"  disabled>
                                    </div>
@@ -81,7 +82,7 @@
                                    <input class="form-check-input" type="radio" name="izbor" id="gridRadios2" value="<?php echo $_SESSION['netacan1']; ?>" >
                                    <label class="form-check-label" for="gridRadios2" style = ' width: 580px;'>
                                      <div class='form-group has-error has-feedback'>
-                                       <input type='text' class='form-control' name='izbor'  value= "  <?php if(!empty($_SESSION['netacan1']))
+                                       <input type='text' class='form-control' name='izbor'  value= "<?php if(!empty($_SESSION['netacan1']))
                                              echo $_SESSION['netacan1'];
                                          ?>"  disabled>
                                      </div>
@@ -95,7 +96,7 @@
                                      <input class="form-check-input" type="radio" name="izbor" id="gridRadios3" value="<?php echo $_SESSION['netacan2']; ?>" >
                                      <label class="form-check-label" for="gridRadios3" style = ' width: 580px;'>
                                        <div class='form-group has-error has-feedback'>
-                                         <input type='text' class='form-control' name='izbor'  value= "<?php if(!empty($_SESSION['netacan2']))
+                                         <input type='text' class='form-control' name='izbor'  value="<?php if(!empty($_SESSION['netacan2']))
                                                                              echo $_SESSION['netacan2'];
                                                                          ?>"  disabled>
                                        </div>
@@ -129,6 +130,31 @@
                                   </form>
                                 </div> <!--div drzi loginBox na sredini-->
                               </div> <!--div row-->
+                            <?php } else { ?>
+
+
+                            <div style = 'background: #b000e6; background: rgba(000, 000, 000, 0.6); color: white;  font-weight: bold; margin-top: 230px'>
+<table>
+  <tr>
+     <td>
+      <center>
+
+      <h1 style = "color: white;"> Vec ste igrali danas!</h1> </center>
+       <h3 style = "color: white">Mozete se takmiciti opet sjutra. Do tad predlazemo Vam da odete u sekciju Trening i dobro se pripremite!</h3>
+     </td>
+  </tr>
+
+  <tr>
+      <td>
+
+        <a style = "color: white; margin-left: 600px;" href="<?= site_url("Igrac/index")?>"> Nazad</a>
+
+      </td>
+  </tr>
+</table>
+                             </div>
+
+                            <?php } ?>
                               </div> <!--div container-->
                               </body>
                               </html>

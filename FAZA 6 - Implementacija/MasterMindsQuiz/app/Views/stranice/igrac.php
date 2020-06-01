@@ -60,7 +60,7 @@
         <div class='container'>
             <div class='row'>
                 <div class='col-sm-3'>
-                    <p id='par1'>Ulogovan registrovani korisnik</p>
+                    <p id='par1'></p>
 
                     <br>
                     <br>
@@ -98,28 +98,27 @@
                     <br>
 
 
-                    <a href ="<?= site_url("Trening/treningPrikaz/8")?>" class='linkovi' id="biologija">BIOLOGIJA</a>
+                    <a href ="<?= site_url("Trening/treningPrikaz/8")?>" class='linkovi' id="biologija" style = "color: white;" >BIOLOGIJA</a>
                     <br>
-                    <a href ="<?= site_url("Trening/treningPrikaz/7")?>" class='linkovi' id="istorija">ISTORIJA</a>
+                    <a href ="<?= site_url("Trening/treningPrikaz/7")?>" class='linkovi' id="istorija" style = "color: white;">ISTORIJA</a>
                     <br>
-                    <a href ="<?= site_url("Trening/treningPrikaz/3")?>" class='linkovi' id="geografija">GEOGRAFIJA</a>
+                    <a href ="<?= site_url("Trening/treningPrikaz/3")?>" class='linkovi' id="geografija" style = "color: white;">GEOGRAFIJA</a>
                     <br>
-                    <a href ="<?= site_url("Trening/treningPrikaz/4")?>" class='linkovi' id="matematika">PRIRODNE NAUKE</a>
+                    <a href ="<?= site_url("Trening/treningPrikaz/4")?>" class='linkovi' id="matematika" style = "color: white;">PRIRODNE NAUKE</a>
                     <br>
-                    <a href ="<?= site_url("Trening/treningPrikaz/2")?>" class='linkovi' id="muzika">MUZIKA</a>
+                    <a href ="<?= site_url("Trening/treningPrikaz/2")?>" class='linkovi' id="muzika" style = "color: white;">MUZIKA</a>
                     <br>
-                    <a href ="<?= site_url("Trening/treningPrikaz/9")?>" class='linkovi' id="umetnost">UMETNOST</a>
-                    <br>
-
-                    <a href ="<?= site_url("Trening/treningPrikaz/6")?>" class='linkovi' id="sport">SPORT</a>
+                    <a href ="<?= site_url("Trening/treningPrikaz/9")?>" class='linkovi' id="umetnost" style = "color: white;">UMETNOST</a>
                     <br>
 
-                    <a href ="<?= site_url("Trening/treningPrikaz/5")?>" class='linkovi' id="filmovi">FILMOVI</a>
+                    <a href ="<?= site_url("Trening/treningPrikaz/6")?>" class='linkovi' id="sport" style = "color: white;">SPORT</a>
                     <br>
-                    <a href ="<?= site_url("Trening/treningPrikaz/1")?>"  class='linkovi' id="serije">SERIJE</a>
+
+                    <a href ="<?= site_url("Trening/treningPrikaz/5")?>" class='linkovi' id="filmovi" style = "color: white;">FILMOVI</a>
                     <br>
-                    <a href='#' class='linkovi' id="nazad">Nazad </a>
-                    <a href="<?= site_url("Home/regIg")?>">ovde</a>.
+                    <a href ="<?= site_url("Trening/treningPrikaz/1")?>"  class='linkovi' id="serije" style = "color: white;">SERIJE</a>
+                    <br>
+                    <a href='#' class='linkovi' id="nazad" style = "color: white;">Nazad </a>
 
 
                 </div>
@@ -131,15 +130,16 @@
 
                 <br>
                 <center>  <h2><i>Dobrodosli, <?php  if(!empty($_SESSION['ulogovaniKorisnik'])) echo $_SESSION['ulogovaniKorisnik']; ?> !</i></h2></center>
-                  Stekni znanje na zabavan nacin:
+                  Kako biti gost emisije 'MasterMind':
                   <br />
                   <p id='p1'>
-                      Sva pitanja i zadaci koji se postavljaju u kvizu preuzeti su iz zvanične literature,
-                      tako da je verodostojnost tačnih odgovora na najvišem nivou.
+                     Potrebno je biti najbolje rangirani igrac u mjesecu. Na kraju mjeseca igraci sa najvise poena dobice pozivnicu za emisiju na e-mail.
+                     Imate mogucnost takmicenja <u> samo jednom</u> u toku dana. Pozeljno je takmiciti se svaki dan da bi bili sto bolje plasirani.
+
                   </p>
                   <p>
-                      Ukoliko ste registrovani korisnik, imate mogucnost da unapredite svoje znanje u delu <b>trening</b> , pre nego sto se oprobate u
-                      takmicenju. Ako ste samo gost, da biste vezbali, potrebno je da se registrujete.
+                      Takodje, imate mogucnost da unaprijedite svoje znanje u dijelu <b>trening</b> , prije nego sto se oprobate u
+                      takmicenju. Poeni sa treninga ne uticu na rang.
                       <br>
                   </p>
                   <br>
