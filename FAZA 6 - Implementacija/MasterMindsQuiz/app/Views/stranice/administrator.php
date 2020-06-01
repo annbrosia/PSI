@@ -1,4 +1,6 @@
-<!-- Martina Markovic 0672/17, Marija Lalic 0616/17-->
+<!-- Prototip: Martina Markovic 0672/17, Marija Lalic 0616/17-->
+<!-- Implementacija: Marija Lalic 0616/17-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,7 +60,7 @@
   </p>
   <p>
       Takodje, imate mogucnost uklanjanja postojecih moderatora i njihovih pitanja, mozete da pogledate kako korisnici komentarisu ovaj sajt.
-     Mozete najbolje da obavjestite o ucescu u emisiju i da resetujete poene kad pronadjete <b><i>Master Mind-a</i></b>. 
+     Mozete najbolje da obavjestite o ucescu u emisiju i da resetujete poene kad pronadjete <b><i>Master Mind-a</i></b>.
       <br>
   </p>
   <br>

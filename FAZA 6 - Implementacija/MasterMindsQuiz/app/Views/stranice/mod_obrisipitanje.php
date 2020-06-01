@@ -1,6 +1,4 @@
-<!-- Implementacija: Marija Lalic 0616/17
-                     Martina Markovic 0672/17
--->
+<!-- Martina Markovic 0672/17-->
 <!DOCTYPE html>
 <html>
 <head>

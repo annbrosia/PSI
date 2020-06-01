@@ -1,5 +1,7 @@
+<!-- Prototip: Martina Markovic 0672/17, Marija Lalic 0616/17
+Implementacija: Ana Blazic,Ana Saponjic -->
+
 <html>
-     <!-- Martina Markovic,Marija Lalic -->
     <head>
         <title> Registracija Moderatora </title>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/stil.css'); ?>">

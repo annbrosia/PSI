@@ -23,7 +23,7 @@
 </div>
 
 <div class = "naslov_mastermind" style = "position: relative;  margin-top: 100px; font-size: 60px"> <h2>
-  <?php 
+  <?php
 { echo  $_SESSION['cntTreningTacno'] . '/' .sizeof($_SESSION['pitanjaTrening']);   }
  ?> </h2></div>
 

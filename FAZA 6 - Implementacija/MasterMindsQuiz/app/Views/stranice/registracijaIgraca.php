@@ -1,6 +1,5 @@
+<!-- Ana Blazic,Ana Saponjic -->
 <html>
-
-      <!-- Ana Blazic,Ana Saponjic -->
     <head>
         <title> Registracija Igraca </title>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/stil.css'); ?>">

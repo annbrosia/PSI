@@ -1,7 +1,6 @@
+<!--  Ana Blazic,Ana Saponjic -->
 <html>
     <head>
-        <!-- Prototip: Martina Markovic,Marija Lalic -->
-        <!-- Implementacija: Ana Blazic,Ana Saponjic -->
         <link rel='stylesheet' type="text/css" href="<?php echo base_url('css/stil.css'); ?>">
       <title>Takmicenje</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"

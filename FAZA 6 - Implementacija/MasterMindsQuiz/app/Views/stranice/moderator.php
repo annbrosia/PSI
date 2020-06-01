@@ -1,5 +1,4 @@
-<!-- Prototip: Martina Markovic,Marija Lalic -->
-<!-- Implementacija: Martina Markovic 0672/17-->
+<!--Martina Markovic 0672/17-->
 <!DOCTYPE html>
 <html>
     <head>
