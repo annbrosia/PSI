@@ -20,7 +20,7 @@ class KomentarModel extends Model
           * dohvati_komentare funkcija koja dohvata odredjen broj komentara korisnika
           *
           * @param int $ukupno
-          * @return rows
+          * @return array
         */
         function dohvati_komentare($ukupno)
         {

@@ -31,16 +31,35 @@ class ModeratorModel extends Model
     }//end_dohvati_moderatore
 
 
+    /**
+        * nadji_email funkcija koja pronalazi moderatora koristi $email
+        *
+        *@param int $email
+        *@return array
+    */
     public function nadji_email($email)
     {
         return $this->where('email', $email)->findAll();
     }
 
+
+    /**
+        * nadji_moderatora funkcija koja pronalazi moderatora koristi idModeratora
+        *
+        *@param int $idModeratora
+        *@return array
+    */
     public function nadji_moderatora($idModeratora)
     {
         return $this->where('idKM', $idModeratora)->findAll();
     }
 
+    /**
+        * nadji_idKategorije funkcija koja pronalazi id kategorije koristi idModeratora
+        *
+        *@param int $idModeratora
+        *@return int
+    */
     public function nadji_idKategorije($idModeratora)
     {
         $results = $this->where('idKM', $idModeratora)->findAll();

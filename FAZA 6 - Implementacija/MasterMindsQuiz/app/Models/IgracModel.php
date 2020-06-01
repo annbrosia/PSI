@@ -19,7 +19,7 @@ class IgracModel extends Model
       * postoji_li_email funkcija koja provjerava da li email pripada nekom od registrovanih korisnika
       *
       * @param string $email
-      * @return row
+      * @return array
     */
     function postoji_li_email($email)
     {
@@ -39,7 +39,7 @@ class IgracModel extends Model
       * dohvati_igrace funkcija koja dohvata sve igrace ciji se username ili neki dio username-a poklapa sa argumentom
       *
       * @param string $tekst
-      * @return rows
+      * @return array
     */
     function dohvati_igrace($tekst)
     {
@@ -84,22 +84,48 @@ class IgracModel extends Model
        }
      }//end_reset_poeni
 
+
+     /**
+     * nadji_igraca funkcija koja vraca niz od jednog igraca koristi idIgraca
+     *
+     *@param int $idIgraca
+     *
+     * @return array
+     */
      public function nadji_igraca($idIgraca) {
          return $this->where('idKI', $idIgraca)->findAll();
      }
 
+     /**
+     * cmp funkcija koja uporedjuje vrijednosti dva broja
+     *
+     *@param int $a
+     *@param int $b
+     * @return boolean
+     */
      static function cmp($a, $b) {
          return ($a['poeni'] < $b['poeni']);
      }
 
+
+     /**
+     * nadji_email funkcija trazi igraca sa odredjenim mailom
+     *
+     *@param string $email
+     *@return array
+     */
        public function nadji_email($email)
      {
          return $this->where('email', $email)->findAll();
      }
 
 
+     /**
+     * najbolji funkcija trazi najbolje rangirane igrace
+     *
+     *@return array
+     */
      public function najbolji() {
-
          $this->join('korisnik', 'igrac.idKI = korisnik.idKorisnika');
          $this->where('obrisan=', '0');
          $svi = $this->findAll();

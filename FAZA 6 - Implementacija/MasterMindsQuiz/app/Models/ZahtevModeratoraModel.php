@@ -31,7 +31,7 @@ class ZahtevModeratoraModel extends Model
     /**
           * dohvati_zahtjeve funkcija za dohvatanje svih zahtjeva moderatora iz tabele
           *
-          * @return rows
+          * @return array
     */
     function dohvati_zahtjeve()
     {
@@ -40,6 +40,13 @@ class ZahtevModeratoraModel extends Model
       return $this->findAll();
     }//end_dohvati_zahtjeve
 
+
+    /**
+          * nadji_email funkcija koja trazi zahtjev sa datim emailom, koristi email
+          *
+          *@param string $email
+          *@return array
+    */
     public function nadji_email($email)
   {
       return $this->where('email', $email)->findAll();

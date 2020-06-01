@@ -14,6 +14,11 @@ class PreporukaModel extends Model
     protected $returnType     = 'array';
     protected $allowedFields = ['idPreporuke', 'tekst', 'idKatP'];
 
+    /**
+          * dohvati_preporuke funkcija za dohvatanja svih preporuka
+          *
+          * @return array
+    */
 function dohvati_preporuke()
 {
     $this->select('*');
@@ -22,6 +27,14 @@ function dohvati_preporuke()
     return $query->getResult();
 }
 
+
+/**
+      * nadji_preporuku funkcija za dohvatanjanje preporuke odredjene kategorije koristi idKat
+      *
+      * @param int $idKat
+      *
+      * @return array
+*/
 function nadji_preporuku($idKat)
 {
   $results = $this->where('idKatP', $idKat)->findAll();

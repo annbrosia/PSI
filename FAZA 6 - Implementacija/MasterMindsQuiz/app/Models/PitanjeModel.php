@@ -32,11 +32,24 @@ class PitanjeModel extends Model
           else return 0;
         }
 
+        /**
+          * nadji_pitanja funkcija koja vraca niz pitanja koristi idModeratora
+          *
+          *@param int $idModeratora
+          *@return array
+         */
     public function nadji_pitanja($idModeratora)
     {
          return $this->where('idKP',$idModeratora)->findAll();
     }
 
+
+    /**
+      * izbrisipitanje funkcija koja brise pitanje koristi tekst
+      *
+      *@param string $tekst
+      *@return void
+     */
     public function izbrisipitanje($tekst)
     {
      $pitanje=$this->where('tekstPitanja',$tekst)->find();
@@ -49,7 +62,7 @@ class PitanjeModel extends Model
        * dohvati_pitanja funkcija za dohvatanje odredjenog broja pitanja iz baze
        *
        * @param int $ukupno
-       * @return rows
+       * @return array
   */
   function get_pitanja($ukupno,$id)
   {
@@ -82,7 +95,7 @@ class PitanjeModel extends Model
            * dohvati_pitanja funkcija za dohvatanje odredjenog broja pitanja iz baze
            *
            * @param int $ukupno
-           * @return rows
+           * @return array
      */
       function dohvati_pitanja($ukupno)
       {

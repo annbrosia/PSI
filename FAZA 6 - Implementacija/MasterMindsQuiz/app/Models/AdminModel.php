@@ -3,7 +3,7 @@
 use CodeIgniter\Model;
 
 /**
-* KorisnikModel – klasa za izvrsavanje upita nad tabelom korisnik
+* AdminModel – klasa za izvrsavanje upita nad tabelom admin
 *
 * @version 1.0
 */
@@ -13,6 +13,13 @@ class AdminModel extends Model
     protected $primaryKey = 'idKA';
     protected $returnType = 'array';
 
+    /**
+    * nadji_admina funkcija koja vraca niz od jednog admina koristi idAdmina
+    *
+    *@param int $idAdmina
+    *
+    * @return array
+    */
     public function nadji_admina($idAdmina)
     {
         return $this->where('idKA', $idAdmina)->findAll();
