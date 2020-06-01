@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2020 at 01:03 AM
+-- Generation Time: Jun 01, 2020 at 10:48 AM
 -- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- PHP Version: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `kviz`
 --
-CREATE DATABASE IF NOT EXISTS `kviz` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `kviz`;
 
 -- --------------------------------------------------------
 
@@ -52,7 +50,6 @@ CREATE TABLE `igrac` (
   `prezime` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `email` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `poeni` int(11) DEFAULT NULL,
-  `poeniTrenutni` int(11) DEFAULT NULL,
   `blokirani` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -60,23 +57,23 @@ CREATE TABLE `igrac` (
 -- Dumping data for table `igrac`
 --
 
-INSERT INTO `igrac` (`idKI`, `ime`, `prezime`, `email`, `poeni`, `poeniTrenutni`, `blokirani`) VALUES
-(8, 'Mila', 'Milic', 'mila@gmail.com', 6, 0, 0),
-(12, 'Milena', 'Milenic', 'milenica@gmail.com', 0, 1, 0),
-(13, 'Milos', 'Milosic', 'milosmilos123@gmail.com', 0, 1, 0),
-(14, 'Ivo', 'Ivic', 'ivoivomalicar123@gmail.com', 0, 1, 1),
-(15, 'Ruzica', 'Ruzic', 'ruza123@gmail.com', 0, 1, 1),
-(16, 'Stefan', 'Stefanovic', 'stefanbadboy123@gmail.com', 0, 1, 1),
-(17, 'Masa', 'Masic', 'masa123@gmail.com', 0, 1, 0),
-(18, 'Teodora', 'Teodoric', 'tealookinggood@gmail.com', 0, 1, 0),
-(19, 'Rozalinda', 'Rozalindic', 'rozalindaroza1@gmail.com', 0, 1, 0),
-(20, 'Dusan', 'Dusanovic', 'dusandule123@gmail.com', 0, 1, 0),
-(21, 'Andjela', 'Andjelic', 'andjelaandjelic@gmail.com', 0, 1, 0),
-(22, 'Jelena', 'Jelenic', 'jeckapecka1@gmail.com', 0, 1, 1),
-(23, 'Marijana', 'Marijanovic', 'marijanamarijana131@gmail.com', 0, 1, 0),
-(24, 'Isidora', 'Isidoric', 'isidoraisidoric@gmail.com', 0, 1, 0),
-(30, 'Email', 'Emailic', 'marijalalic@hotmail.rs', 0, 1, 1),
-(34, 'Martina', 'Markovic', 'martinamarkovic998@gmail.com', 3, 0, 0);
+INSERT INTO `igrac` (`idKI`, `ime`, `prezime`, `email`, `poeni`, `blokirani`) VALUES
+(8, 'Mila', 'Milic', 'mila@gmail.com', 6, 0),
+(12, 'Milena', 'Milenic', 'milenica@gmail.com', 0, 0),
+(13, 'Milos', 'Milosic', 'milosmilos123@gmail.com', 0, 0),
+(14, 'Ivo', 'Ivic', 'ivoivomalicar123@gmail.com', 0, 1),
+(15, 'Ruzica', 'Ruzic', 'ruza123@gmail.com', 0, 1),
+(16, 'Stefan', 'Stefanovic', 'stefanbadboy123@gmail.com', 0, 1),
+(17, 'Masa', 'Masic', 'masa123@gmail.com', 0, 0),
+(18, 'Teodora', 'Teodoric', 'tealookinggood@gmail.com', 0, 0),
+(19, 'Rozalinda', 'Rozalindic', 'rozalindaroza1@gmail.com', 0, 0),
+(20, 'Dusan', 'Dusanovic', 'dusandule123@gmail.com', 0, 0),
+(21, 'Andjela', 'Andjelic', 'andjelaandjelic@gmail.com', 0, 0),
+(22, 'Jelena', 'Jelenic', 'jeckapecka1@gmail.com', 0, 1),
+(23, 'Marijana', 'Marijanovic', 'marijanamarijana131@gmail.com', 0, 0),
+(24, 'Isidora', 'Isidoric', 'isidoraisidoric@gmail.com', 0, 0),
+(30, 'Email', 'Emailic', 'marijalalic@hotmail.rs', 0, 1),
+(34, 'Martina', 'Markovic', 'martinamarkovic998@gmail.com', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -139,7 +136,6 @@ CREATE TABLE `korisnik` (
   `username` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `password` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
   `uloga` varchar(45) COLLATE utf8mb4_unicode_520_ci NOT NULL,
-  `aktivan` int(11) NOT NULL,
   `obrisan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
@@ -147,40 +143,40 @@ CREATE TABLE `korisnik` (
 -- Dumping data for table `korisnik`
 --
 
-INSERT INTO `korisnik` (`idKorisnika`, `username`, `password`, `uloga`, `aktivan`, `obrisan`) VALUES
-(1, 'maki98', 'myysql', 'moderator', 1, 0),
-(2, 'saleno1', 'workwork', 'moderator', 0, 0),
-(3, 'lola1', '123lola', 'moderator', 0, 0),
-(4, 'uki', 'uki123', 'moderator', 0, 0),
-(5, 'daki', 'daki123', 'moderator', 0, 0),
-(6, 'sale', 'sale123', 'moderator', 0, 0),
-(7, 'tasa', 'tasa123', 'moderator', 0, 0),
-(8, 'mila', 'mila123', 'igrac', 1, 0),
-(9, 'ksenci', 'ksenci123', 'moderator', 0, 0),
-(10, 'strahinja_junior', 'strahinja123', 'moderator', 0, 0),
-(11, 'najo', 'sekspir', 'moderator', 0, 0),
-(12, 'kraljica_neba', '123456', 'igrac', 0, 0),
-(13, 'mito_bekrija3', '123456', 'igrac', 0, 0),
-(14, 'smartest_one1', '123456', 'igrac', 0, 0),
-(15, 'supa_bistra213', '123456', 'igrac', 0, 0),
-(16, 'stefo11', '123456', 'igrac', 0, 0),
-(17, 'sundjer_bob232', '123456', 'igrac', 0, 0),
-(18, 'cici22', '123456', 'igrac', 0, 0),
-(19, 'dinosaurus21', '123456', 'igrac', 0, 0),
-(20, 'dule_232', '123456', 'igrac', 0, 0),
-(21, 'dijamant_margarin232', '123456', 'igrac', 0, 0),
-(22, 'jk_diva123', '123456', 'igrac', 0, 1),
-(23, 'zrela_lubenica', '123456', 'igrac', 0, 0),
-(24, 'isidora11', '123456', 'igrac', 0, 0),
-(25, 'miroslav232', '123456', 'moderator', 0, 0),
-(26, 'mira232', '123456', 'moderator', 0, 0),
-(27, 'milosmiki23123', '123456', 'moderator', 0, 0),
-(28, 'mitarmitro23', '123456', 'moderator', 0, 0),
-(29, 'goks23goks', '123456', 'moderator', 0, 0),
-(30, 'email_test123', '123456', 'igrac', 0, 0),
-(31, 'dzoni111', '123456', 'moderator', 0, 1),
-(34, 'marti', 'ajica', 'igrac', 0, 0),
-(35, 'admin', 'admin123', 'admin', 0, 0);
+INSERT INTO `korisnik` (`idKorisnika`, `username`, `password`, `uloga`, `obrisan`) VALUES
+(1, 'maki98', 'myysql', 'moderator', 0),
+(2, 'saleno1', 'workwork', 'moderator', 0),
+(3, 'lola1', '123lola', 'moderator', 0),
+(4, 'uki', 'uki123', 'moderator', 0),
+(5, 'daki', 'daki123', 'moderator', 0),
+(6, 'sale', 'sale123', 'moderator', 0),
+(7, 'tasa', 'tasa123', 'moderator', 0),
+(8, 'mila', 'mila123', 'igrac', 0),
+(9, 'ksenci', 'ksenci123', 'moderator', 0),
+(10, 'strahinja_junior', 'strahinja123', 'moderator', 0),
+(11, 'najo', 'sekspir', 'moderator', 0),
+(12, 'kraljica_neba', '123456', 'igrac', 0),
+(13, 'mito_bekrija3', '123456', 'igrac', 0),
+(14, 'smartest_one1', '123456', 'igrac', 0),
+(15, 'supa_bistra213', '123456', 'igrac', 0),
+(16, 'stefo11', '123456', 'igrac', 0),
+(17, 'sundjer_bob232', '123456', 'igrac', 0),
+(18, 'cici22', '123456', 'igrac', 0),
+(19, 'dinosaurus21', '123456', 'igrac', 0),
+(20, 'dule_232', '123456', 'igrac', 0),
+(21, 'dijamant_margarin232', '123456', 'igrac', 0),
+(22, 'jk_diva123', '123456', 'igrac', 1),
+(23, 'zrela_lubenica', '123456', 'igrac', 0),
+(24, 'isidora11', '123456', 'igrac', 0),
+(25, 'miroslav232', '123456', 'moderator', 0),
+(26, 'mira232', '123456', 'moderator', 0),
+(27, 'milosmiki23123', '123456', 'moderator', 0),
+(28, 'mitarmitro23', '123456', 'moderator', 0),
+(29, 'goks23goks', '123456', 'moderator', 0),
+(30, 'email_test123', '123456', 'igrac', 0),
+(31, 'dzoni111', '123456', 'moderator', 1),
+(34, 'marti', 'ajica', 'igrac', 0),
+(35, 'admin', 'admin123', 'admin', 0);
 
 -- --------------------------------------------------------
 
@@ -327,7 +323,7 @@ INSERT INTO `pitanje` (`idPitanja`, `tekstPitanja`, `tacan`, `netacan1`, `netaca
 (63, 'U algebarskoj geometriji, ova teorema tvrdi da je broj mogucih presecnih tacaka dve ravanske algebarske krive jednak proizvodu njihovih stepena.\n O kojoj teoremi je rec?', 'Bezuova teorema', 'Binomna teorema', 'Bor-Molererupova teorema', 'Berova teorema', 4, 4),
 (64, 'Kod pravouglog trougla gde su a i b katete,a c je hipotenuza,vazi teorema da je zbir kvadrata kateta jednak kvadratu hipotenuze. Kako se zove ova teorema?', 'Pitagorina', 'Lagranzova', 'Fermaova', 'Kosinusna', 4, 4),
 (65, 'Broj PI je priblizno jednak:', '3.14', '1.6', '2.8', '3.20', 4, 4),
-(66, 'Ako je hipotenuza kod pravouglog trougla jednaka 10cm, a jedna kateta je 6cm,koja je duzina druge katete?', '8cm', '4', '-12', '-5', 4, 4),
+(66, 'Ako je hipotenuza kod pravouglog trougla jednaka 100cm, a jedna kateta je 6cm,koja je duzina druge katete?', '8cm', '4', '-12', '-5', 4, 4),
 (67, 'Koliko ivica ima kocka?', '12', '4', '6', '8', 4, 4),
 (68, 'Koliki je obim kruga poluprecnika 3cm?', '6Pi cm', '3Pi cm', '9Pi cm', '12Pi cm', 4, 4),
 (69, 'Kolika je povrsina kruga poluprecnika 3cm?', '9Pi cm2', '6Pi cm2', '12Pi cm2', '3Pi cm2', 4, 4),
@@ -353,7 +349,7 @@ INSERT INTO `pitanje` (`idPitanja`, `tekstPitanja`, `tacan`, `netacan1`, `netaca
 (89, 'U kojem se gradu film Die Hard odvija?', 'Chicago', 'Los Angeles', 'San Francisco', 'New York', 5, 5),
 (90, 'Koji je naziv broda Jacka Sparrowa?', 'The Black Pearl', 'The Black Flag', 'The Horizon', 'The Hispaniola', 5, 5),
 (91, 'Koji je glumac glumio u ova tri filma - Guardians of the Galaxy, Jurassic World, The Magnificent Seven?', 'Chris Pratt', 'Chris Evans', 'Jeffrey Goldblum', 'Vin Diesel', 5, 5),
-(92, 'Koliko je Tomb Raider filmova napravljeno?', '3', '2', '2', '4', 5, 5),
+(92, 'Koliko je Tomb Raider filmova napravljeno?', '3', '1', '2', '4', 5, 5),
 (93, 'Koji je naziva zatvora u filmu The Rock?', 'Alcatraz', 'Devils Island', 'Attica', 'Sing,Sing', 5, 5),
 (94, 'Ko je glumio Che Guevaru u filmu \"Evita\"?', 'Antonio Banderas', 'Benicio del Toro', 'Omar Sharif', 'Diego Luna', 5, 5),
 (95, 'Ko glumi glavnu zensku ulogu u filmu \"Twilight\"?', 'Kristen Stewart', 'Anna Kendrick', 'Jennifer Lawrence', 'Emma Roberts', 5, 5),

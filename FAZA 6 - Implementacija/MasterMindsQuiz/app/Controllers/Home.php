@@ -14,6 +14,7 @@ class Home extends BaseController{
           $_SESSION['poruka_preporuka'] = '';
           $_SESSION['motivaciona'] = '';
           $_SESSION['kviz_end'] = 0;
+          $_SESSION['vecigrodanas'] = 0;
             return $this->prikaz("login", []);
 	      }
 
@@ -33,6 +34,7 @@ class Home extends BaseController{
 
         public function prikaz($page,$data){
             $data['controller']='Home';
+            $_SESSION['vecigrodanas'] = 0;
             echo view("stranice/$page",$data);
         }
         //na ovaj nacin kontroler prosledjuje podatke view-u
@@ -46,7 +48,7 @@ class Home extends BaseController{
   {
     $db= \Config\Database::connect();
     $builder=$db->table("korisnik");
-    $builder->set('aktivan', '0', FALSE);
+  //  $builder->set('aktivan', '0', FALSE);
     $builder->where('username', $_SESSION['ulogovaniKorisnik']);
     $builder->update();
     $_SESSION['ulogovaniKorisnik']="";
@@ -99,7 +101,7 @@ class Home extends BaseController{
                     $_SESSION['ulogovaniKorisnikId']=$korisnik[0]['idKorisnika'];
                     $_SESSION['isLoggedIn']=1; //ulogovan je
 
-                    $this->updateAktivan($korisnik[0]);
+                  //  $this->updateAktivan($korisnik[0]);
 
                     if($ulogaBaza=="moderator")
                     {
@@ -134,7 +136,7 @@ class Home extends BaseController{
 
 
         }
-        public function updateAktivan($korisnik){
+        /*public function updateAktivan($korisnik){
              $db= \Config\Database::connect();
               $builder=$db->table("korisnik");
 
@@ -142,12 +144,8 @@ class Home extends BaseController{
                 $builder->set('aktivan', '1', FALSE);
                 $builder->where('username', $korisnik['username']);
                 $builder->update();
-
-
-
-
-
         }
+        */
         public function ubaciUBazuKorisnik($data){
 
             $db= \Config\Database::connect();
@@ -203,7 +201,6 @@ class Home extends BaseController{
                 "username" => $_POST["reg_mod_username"],
                 "password" => $_POST["reg_mod_lozinka"],
                 "uloga" => "moderator",
-                "aktivan"=> 0
               ];
 
                $dataZahtevModerator=[
@@ -310,7 +307,6 @@ class Home extends BaseController{
                 "username" => $_POST["reg_username"],
                 "password" => $_POST["reg_lozinka"],
                 "uloga" => "igrac",
-                "aktivan"=> 0
 
                 ];
 
@@ -321,7 +317,6 @@ class Home extends BaseController{
                 "prezime" => $_POST["reg_prezime"],
                 "email" => $_POST["reg_email"],
                 "poeni" => 0,
-                "poeniTrenutni"=>0,
                 "blokirani"=> 0
                 ];
 

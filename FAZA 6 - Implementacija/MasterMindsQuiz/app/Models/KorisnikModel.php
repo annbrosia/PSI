@@ -12,7 +12,7 @@ class KorisnikModel extends Model
     protected $table      = 'korisnik';
     protected $primaryKey = 'idKorisnika';
     protected $returnType     = 'array';
-    protected $allowedFields = ['idKorisnika', 'username','password','uloga','aktivan'];
+    protected $allowedFields = ['idKorisnika', 'username','password','uloga'];
 
 
     /**

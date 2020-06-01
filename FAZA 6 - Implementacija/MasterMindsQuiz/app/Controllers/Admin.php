@@ -156,7 +156,6 @@ class Admin extends BaseController
 		 'username' => $moderator['username'],
 		 'password' => $moderator['password'],
 		 'uloga'  => 'moderator',
-		 'aktivan' => '0',
 		 'obrisan' => '0'
 			];
 			$KorisnikModel->insert($dataKor);

@@ -62,7 +62,7 @@ class Igrac extends BaseController {
         }
           $db= \Config\Database::connect();
           $builder=$db->table("korisnik");
-          $builder->set('aktivan', '0', FALSE);
+          //$builder->set('aktivan', '0', FALSE);
           $builder->where('username', $_SESSION['ulogovaniKorisnik']);
           $builder->update();
           $_SESSION['ulogovaniKorisnik']="";

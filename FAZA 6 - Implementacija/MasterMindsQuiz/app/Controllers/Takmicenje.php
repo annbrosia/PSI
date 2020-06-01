@@ -116,6 +116,7 @@ public function rezultati_bodovi()
     public function gost(){
         $_SESSION['trenutnoIgra']='gost';
         $_SESSION['cntGostaTacno']=0;
+        $_SESSION['vecigrodanas']=0;
         $_SESSION['cntGosta']=0;
         $_SESSION['pitanja'] = $this->niz_random_pitanja();
         $_SESSION['kviz_end'] = 0;

@@ -13,7 +13,7 @@ class IgracModel extends Model
     protected $table      = 'igrac';
     protected $primaryKey = 'idKI';
     protected $returnType     = 'array';
-    protected $allowedFields = ['idKI', 'ime','prezime','email','poeni','poeniTrenutni','blokiran'];
+    protected $allowedFields = ['idKI', 'ime','prezime','email','poeni','blokiran'];
 
     /**
       * postoji_li_email funkcija koja provjerava da li email pripada nekom od registrovanih korisnika
