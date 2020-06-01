@@ -8,8 +8,18 @@ use App\Models\PitanjeModel;
 use App\Models\AdminModel;
 
 
+/**
+* Home – klasa za aktivnosti na pocetnoj stranici
+*
+* @version 1.0
+*/
 class Home extends BaseController{
 
+  /**
+       * index funkcija koja prikazuje stranicu za logovanje
+       *
+       * @return View
+  */
       	public function index(){
           $_SESSION['poruka_preporuka'] = '';
           $_SESSION['motivaciona'] = '';
@@ -18,20 +28,43 @@ class Home extends BaseController{
             return $this->prikaz("login", []);
 	      }
 
+        /**
+             * regIg funkcija koja prikazuje stranicu za registraciju igraca
+             *
+             * @return View
+        */
         public function regIg(){
             return $this->prikaz("registracijaIgraca", []);
       	}
 
+        /**
+             * regMod funkcija koja prikazuje stranicu za registraciju moderatora
+             *
+             * @return View
+        */
         public function regMod(){
             return $this->prikaz("registracijaModeratora", []);
       	}
 
+
+        /**
+             * gost funkcija koja prikazuje stranicu za gosta
+             *
+             * @return View
+        */
         public function gost(){
           $_SESSION['kviz_end'] = 0;
             return $this->prikaz("gost", []);
 	      }
 
-
+        /**
+        			* prikaz funkcija za prikaz stranica koristi stranicu i podatke koje na njoj treba prikazati
+        			*
+        			* @param String $page
+        			* @param Array $data
+        			*
+        			* @return View
+        */
         public function prikaz($page,$data){
             $data['controller']='Home';
             $_SESSION['vecigrodanas'] = 0;
@@ -42,7 +75,12 @@ class Home extends BaseController{
 
 
 
-
+  /**
+        * odjava funkcija za odjavljivanje prijavljenih korisnika
+        *
+        *
+        * @return View
+  */
 
   public function odjava()
   {
@@ -66,6 +104,13 @@ class Home extends BaseController{
 
 
 
+  /**
+        * submit funkcija za validiranje podataka koje korisnik unosi i na osnovu kojih
+        * provjerava da li takav korisnik postoji u bazi sa nekom ulogom
+        *
+        *
+        * @return View
+  */
         public function submit(){
             $_SESSION['user']="";
             $_SESSION['lozinka']="";
@@ -146,12 +191,31 @@ class Home extends BaseController{
                 $builder->update();
         }
         */
+
+
+        /**
+              * ubaciUBazuKorisnik funkcija za ubacivanje novog korisnika u tabelu korisnik koristi
+              * niz podataka data koje sadrze informacije o novom korisniku
+              *
+              * @param Array $data
+              *
+              * @return void
+        */
         public function ubaciUBazuKorisnik($data){
 
             $db= \Config\Database::connect();
             $builder=$db->table("korisnik");
             $builder->insert($data);
         }
+
+        /**
+              * ubaciUBazuIgrac funkcija za ubacivanje novog igraca u tabelu igrac koristi
+              * niz podataka data koje sadrze inforamcije o novom igracu
+              *
+              * @param Array $data
+              *
+              * @return void
+        */
          public function ubaciUBazuIgrac($data){
 
             $db= \Config\Database::connect();
@@ -160,6 +224,14 @@ class Home extends BaseController{
         }
 
 
+        /**
+              * ubaciUBazuZahtevModeratora funkcija za ubacivanje novog zahtjeva u tabelu zahtjevmoderatora koristi
+              * niz podataka data koje sadrze inforamcije o novom zahtjevu
+              *
+              * @param Array $data
+              *
+              * @return void
+        */
          public function ubaciUBazuZahtevModeratora($data){
 
             $db= \Config\Database::connect();
@@ -168,6 +240,13 @@ class Home extends BaseController{
         }
 
 
+        /**
+            * registrujModeratora funkcija za registrovanje novog moderatora
+            * i validaciju unijetih podataka
+            *
+            *
+            * @return View
+        */
          public function registrujModeratora()
          {
              $rules = ['reg_mod_username' => 'max_length[45]',
@@ -276,9 +355,13 @@ class Home extends BaseController{
 }
         }
 
-
-
-
+        /**
+            * registrujIgraca funkcija za registrovanje novog igraca
+            * i validaciju unijetih podataka
+            *
+            *
+            * @return View
+        */
         public function registrujIgraca(){
           $rules = ['reg_username' => 'max_length[45]',
             'reg_lozinka' => 'max_length[45]',
@@ -384,10 +467,27 @@ class Home extends BaseController{
 
 
             //////////////////////////////////////////ZABORAVLJENA LOZINKA//////////////
+            /**
+                * zaboravljenalozinka funkcija za prikaz stranice za zaboravljenu lozinku
+                *
+                *
+                * @return View
+            */
             public function zaboravljenalozinka() {
                 $this->prikaz("mod_zaboravljenalozinka", []);
             }
 
+
+            /**
+                * emailSubmit funkcija za slanje mejla za resetovanje lozinke koristi
+                *adresu, temu, poruku i email korisnika
+                *
+                *@param $address
+                *@param $subject
+                *@param $message
+                *@param $korisnik
+                * @return View
+            */
             public function emailSubmit($address, $subject, $message, $korisnik) {
         $headers = "Reply-To: MasterMinds Oceans4 masterminds.kviz@gmail.com\r\n";
         	 $headers .= "Return-Path: MasterMinds Oceans4 masterminds.kviz@gmail.com\r\n";
@@ -402,13 +502,26 @@ class Home extends BaseController{
                 }
             }
 
+
+            /**
+                * reset funkcija koja se poziva tek kad korisnik klikne na link u mejlu
+                *i prikaze se stranice za resetovanje lozinke
+                *
+                * @return View
+            */
             public function reset() { //ulazi se sa mejla
                $data['tokan'] = $_GET['tokan'];
                $_SESSION['tokan']=$data['tokan'];
                 $this->prikaz("mod_novalozinka", []);
             }
 
-
+            /**
+                * resetLink funkcija za formiranje  linka za korisnika koji zeli da promijeni
+                *lozinku i njegovo slanje na mejl
+                *
+                *
+                * @return View
+            */
             public function resetLink() {
                 $email = $_POST['email'];
                 $moderatorModel = new ModeratorModel();
@@ -436,9 +549,14 @@ class Home extends BaseController{
                            $this->prikaz("mod_zaboravljenalozinka", ['errors'=>"Netacan email"]);
                     }
                 }
-
-
             }
+
+            /**
+                * zapamtinovulozinku funkcija za pamcenje nove lozinke
+                *
+                *
+                * @return View
+            */
 
             public function zapamtinovulozinku(){
                 $tokan=$_SESSION['tokan'];

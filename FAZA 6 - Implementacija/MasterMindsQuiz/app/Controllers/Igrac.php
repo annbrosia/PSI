@@ -8,8 +8,20 @@ use App\Models\ModeratorModel;
 use App\Models\KorisnikModel;
 use App\Models\KomentarModel;
 
+/**
+* Igrac – klasa za aktivnosti ulogovanog igraca
+*
+* @version 1.0
+*/
 class Igrac extends BaseController {
-
+  /**
+  			* prikaz funkcija za prikaz stranica koristi stranicu i podatke koje na njoj treba prikazati
+  			*
+  			* @param String $page
+  			* @param Array $data
+  			*
+  			* @return View
+  */
     protected function prikaz($page, $data) {
         $data['controller'] = 'Igrac';
         $data['korisnik'] = $this->session->get('igrac'); // ko je korisnik
@@ -17,11 +29,23 @@ class Igrac extends BaseController {
     }
 
 ///////////////////////////////////////////////////////////////POCETNA/////////
+/**
+			* home funkcija za prikaz stranice za igraca
+			*
+			*
+			* @return View
+*/
     public function home() {
       $_SESSION['kviz_end'] = 0;
         $this->prikaz("igrac", []);
     }
 
+    /**
+    			* index funkcija za prikaz stranice za igraca
+    			*
+    			*
+    			* @return View
+    */
     public function index() {
       $_SESSION['kviz_end'] = 0;
         $this->prikaz("igrac", []);
@@ -30,6 +54,13 @@ class Igrac extends BaseController {
 
 
     ///////////////////////////////////////////ISTORIJA REZULTATA///////////////
+
+    /**
+    			* istorijaRezultata funkcija za prikaz istorije rezultata korisnika
+    			*
+    			*
+    			* @return View
+    */
     public function istorijaRezultata() {
         $rModel = new RezultatModel();
         $igrac = $this->session->get('igrac');
@@ -38,6 +69,12 @@ class Igrac extends BaseController {
     }
 
     ////////////////////////////////////////////RANG LISTA//////////////////////
+    /**
+ 			 * rang funkcija za prikaz najbolje plasiranih igraca
+ 			 *
+ 			 *
+ 			 * @return View
+ 	*/
     public function rang() {
         $iModel = new IgracModel();
         $najbolji = $iModel->najbolji();
@@ -47,7 +84,15 @@ class Igrac extends BaseController {
                                'usernames'=> $usernames]);
 
         }
+
+/**
+    * odjava funkcija za odjavu igraca pri cemu ima mogucnost da ostavi komentar
+    *
+    *
+    * @return View
+*/
 // razlikuje se od odjave admina i moderatora pa zato nije Home/odjava
+
         public function odjava()
         {
 

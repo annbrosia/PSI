@@ -22,20 +22,43 @@ use App\Models\MotivacionaModel;
  *
  * @author Ana
  */
+
+
+ /**
+ * Takmicenje – klasa za prikaz kviza, racunanje poena(ako nije gost) i prikaz rezultata
+ *
+ * @version 1.0
+ */
 class Takmicenje extends BaseController {
 
-
+  /**
+        * prikaz funkcija za prikaz stranica koristi stranicu i podatke koje na njoj treba prikazati
+        *
+        * @param String $page
+        * @param Array $data
+        *
+        * @return View
+  */
     public function prikaz($page,$data){
         $data['controller']='Home';
         echo view("stranice/$page",$data);
     }
 
+    /**
+         * rezultati_bodovi funkcija koja prikazuje stranicu sa odgovorima
+         *
+         * @return View
+    */
+  public function rezultati_bodovi()
+  {
+   return $this->prikaz("prikaz_odgovora", []);
+ }
 
-public function rezultati_bodovi()
-{
-  return $this->prikaz("prikaz_odgovora", []);
-}
-
+ /**
+      * niz_random_pitanja funkcija koja generise odredjen broj razlicitih pitanja
+      *
+      * @return Array
+ */
     public function niz_random_pitanja()
     {
       $PitanjeModel = new PitanjeModel();
@@ -66,6 +89,12 @@ public function rezultati_bodovi()
       return   $niz_odabranih_pitanja;
     }//end_function
 
+
+    /**
+         * takmicenjePrikaz funkcija koja prikazuje kviz i prvo pitanje
+         *
+         * @return View
+    */
     public function takmicenjePrikaz(){
 
             $provjera_datum = false;
@@ -113,6 +142,12 @@ public function rezultati_bodovi()
            else return $this->prikaz("igrac", []);
     }
 
+
+    /**
+         * gost funkcija koja prikazuje kviz za gosta i prvo pitanje
+         *
+         * @return View
+    */
     public function gost(){
         $_SESSION['trenutnoIgra']='gost';
         $_SESSION['cntGostaTacno']=0;
@@ -138,8 +173,12 @@ public function rezultati_bodovi()
       }
 
 
-
-
+      /**
+           * dohvatiPitanje funkcija koja redom dohvata pitanje iz vec generisanog
+           * niza random pitanja i pamti ih u niz sesije
+           *
+           * @return void
+      */
     public function dohvatiPitanje(){
        $pitanje = $_SESSION['pitanja'];
          //print_r($pitanje);
@@ -184,7 +223,14 @@ public function rezultati_bodovi()
             }
         }
 
-
+        /**
+             * izracunajPoene funkcija koja pamti poene za registrovanog igraca, ali ne i za
+             * gosta, takodje kad korisnik/gost odradi sva pitanja, prikaze mu se stranica sa tacnim
+              *i netacnim odgovorima, ako je reg. igrac, prikazu mu se i preporuke iz onih kategorija
+              *na koje je dao netacan odgovor
+             *
+             * @return View
+        */
         public function izracunajPoene(){
           if(!empty($_POST['izbor']))
           {

@@ -27,6 +27,11 @@ class Admin extends BaseController
 		echo view('stranice/administrator.php');
 	}//end_index
 
+	/**
+	     * home funkcija koja prikazuju administratorsku pocetnu stranicu
+	     *
+	     * @return View
+	*/
 	public function home()
 	{
 		echo view('stranice/administrator.php');
@@ -440,12 +445,26 @@ public function delete_igrac()
 	 }*/
 
 //////////////////////////////////////////////PRIKAZ/////////////////////////////////////
+/**
+			* prikaz funkcija za prikaz stranica koristi stranicu i podatke koje na njoj treba prikazati
+			*
+			* @param String $page
+			* @param Array $data
+			*
+			* @return View
+*/
 	 public function prikaz($page,$data)
 	 {
 	 		echo view("stranice/$page",$data);
 	 }
 
 	 ////////////////////////////////////////////RANG LISTA//////////////////////
+	 /**
+			 * rang funkcija za prikaz najbolje plasiranih igraca
+			 *
+			 *
+			 * @return View
+	*/
  	public function rang() {
  			$iModel = new IgracModel();
  			$najbolji = $iModel->najbolji();

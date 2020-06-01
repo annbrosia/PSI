@@ -7,9 +7,21 @@ use App\Models\ModeratorModel;
 use App\Config\Email;
 use App\Models\KategorijaModel;
 
-
+/**
+* Moderator – klasa za aktivnosti moderatora
+*
+* @version 1.0
+*/
 class Moderator extends BaseController {
 
+  /**
+  			* prikaz funkcija za prikaz stranica koristi stranicu i podatke koje na njoj treba prikazati
+  			*
+  			* @param String $page
+  			* @param Array $data
+  			*
+  			* @return View
+  */
    protected function prikaz($page, $data) {
         $data['controller'] = 'Moderator';
         $data['korisnik'] = $this->session->get('moderator'); // ko je korisnik
@@ -17,10 +29,21 @@ class Moderator extends BaseController {
     }
 
 ///////////////////////////////////////////////////////////////POCETNA/////////
+/**
+     * home funkcija koja prikazuju moderatorsku pocetnu stranicu
+     *
+     * @return View
+*/
     public function home() {
         $this->prikaz("moderator", []);
     }
 
+
+    /**
+         * index funkcija koja prikazuju moderatorsku pocetnu stranicu
+         *
+         * @return View
+    */
     public function index() {
         $this->prikaz("moderator", []);
     }
@@ -31,10 +54,22 @@ class Moderator extends BaseController {
        parent::odjava();
    }*/
     //////////////////////////////////////////////DODAJ PITANJE////////////////
+
+    /**
+         * dodajpitanje funkcija koja prikazuju stranicu za dodavanje pitanja
+         *
+         * @return View
+    */
     public function dodajpitanje() {
         $this->prikaz("mod_dodajpitanje", []);
     }
 
+
+    /**
+         * dodajnovo funkcija za dodavanje novog pitanja i validaciju unijetih podataka
+         *
+         * @return View
+    */
     public function dodajnovo() {
         $rules = ['tekstP' => 'required|min_length[10]|max_length[255]',
             'tacan' => 'required|max_length[45]',
@@ -93,6 +128,11 @@ class Moderator extends BaseController {
     }
 
 ////////////////////////////////////////////////////////IZBRISI PITANJE/////////
+/**
+     * izbrisipitanje funkcija za brisanje postojeceg pitanja
+     *
+     * @return View
+*/
     public function izbrisipitanje() {
     $idModeratora = $this->session->get('moderator')['idKM'];
      $pModel= new PitanjeModel();
@@ -161,6 +201,12 @@ public function obrisi_pitanje()
 }//end_obrisi_pitanje
 
 ////////////////////////////////////////////RANG LISTA//////////////////////
+/**
+    * rang funkcija za prikaz najbolje plasiranih igraca
+    *
+    *
+    * @return View
+*/
 public function rang() {
     $iModel = new IgracModel();
     $najbolji = $iModel->najbolji();

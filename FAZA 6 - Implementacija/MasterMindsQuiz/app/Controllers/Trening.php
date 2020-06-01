@@ -18,8 +18,20 @@ use App\Models\PitanjeModel;
  *
  * @author Ana
  */
-class Trening extends BaseController{
 
+
+ /**
+ * Trening – klasa za prikaz kviza iz odredjene kategorije i prikaz rezultata na kraju
+ *
+ * @version 1.0
+ */
+class Trening extends BaseController{
+  /**
+       * dohvatiPitanjeTrening funkcija koja redom dohvata pitanje iz vec generisanog
+       * niza random pitanja i pamti ih u niz sesije
+       *
+       * @return void
+  */
      public function dohvatiPitanjeTrening(){
        $svaPitanja = $_SESSION['pitanjaTrening'];
        $r = $_SESSION['cntTrening'];
@@ -58,7 +70,11 @@ class Trening extends BaseController{
             }
         }
 
-
+        /**
+             * niz_random_pitanja_trening funkcija koja generise odredjen broj razlicitih pitanja
+             *
+             * @return Array
+        */
         public function niz_random_pitanja_trening($id)
         {
           $pitanjeModel=new PitanjeModel();
@@ -91,7 +107,11 @@ class Trening extends BaseController{
           return   $niz_odabranih_pitanja;
         }//end_function
 
-
+        /**
+             * treningPrikaz funkcija koja prikazuje kviz iz izabrane kategorije i prvo pitanje
+             *
+             * @return View
+        */
         public function treningPrikaz($id) {
             $_SESSION['nnn']=$id;
             $_SESSION['maxTrening'] = 0;
@@ -114,7 +134,13 @@ class Trening extends BaseController{
 
         }
 
-
+        /**
+              * izracunajPoeneTrening funkcija koja racuna poene ostvarene na kvizu bez njihovog pamcenja
+              *takodje kad korisnik odradi sva pitanja, prikaze mu se stranica sa tacnim
+              *i netacnim odgovorima
+               *
+              * @return View
+        */
 
         public function izracunajPoeneTrening(){
           if(!empty($_POST['izbor']))
@@ -147,11 +173,26 @@ class Trening extends BaseController{
             }
 
 
+
+              /**
+                    * rezultati_bodovi_trening funkcija za prikaz rezultata sa treninga
+                    * @return View
+              */
+
             public function rezultati_bodovi_trening()
             {
                return $this->prikaz("prikaz_odgovora_trening", []);
             }
 
+
+              /**
+                    * prikaz funkcija za prikaz stranica koristi stranicu i podatke koje na njoj treba prikazati
+                    *
+                    * @param String $page
+                    * @param Array $data
+                    *
+                    * @return View
+              */
           public function prikaz($page,$data){
             $data['controller']='Home';
              echo view("stranice/$page",$data);
