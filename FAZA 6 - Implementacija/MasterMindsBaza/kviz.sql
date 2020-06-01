@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2020 at 10:48 AM
+-- Generation Time: Jun 01, 2020 at 11:25 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -58,21 +58,21 @@ CREATE TABLE `igrac` (
 --
 
 INSERT INTO `igrac` (`idKI`, `ime`, `prezime`, `email`, `poeni`, `blokirani`) VALUES
-(8, 'Mila', 'Milic', 'mila@gmail.com', 6, 0),
+(8, 'Mila', 'Milic', 'mila@gmail.com', 13, 0),
 (12, 'Milena', 'Milenic', 'milenica@gmail.com', 0, 0),
 (13, 'Milos', 'Milosic', 'milosmilos123@gmail.com', 0, 0),
-(14, 'Ivo', 'Ivic', 'ivoivomalicar123@gmail.com', 0, 1),
-(15, 'Ruzica', 'Ruzic', 'ruza123@gmail.com', 0, 1),
-(16, 'Stefan', 'Stefanovic', 'stefanbadboy123@gmail.com', 0, 1),
+(14, 'Ivo', 'Ivic', 'ivoivomalicar123@gmail.com', 0, 0),
+(15, 'Ruzica', 'Ruzic', 'ruza123@gmail.com', 0, 0),
+(16, 'Stefan', 'Stefanovic', 'stefanbadboy123@gmail.com', 0, 0),
 (17, 'Masa', 'Masic', 'masa123@gmail.com', 0, 0),
 (18, 'Teodora', 'Teodoric', 'tealookinggood@gmail.com', 0, 0),
 (19, 'Rozalinda', 'Rozalindic', 'rozalindaroza1@gmail.com', 0, 0),
 (20, 'Dusan', 'Dusanovic', 'dusandule123@gmail.com', 0, 0),
 (21, 'Andjela', 'Andjelic', 'andjelaandjelic@gmail.com', 0, 0),
-(22, 'Jelena', 'Jelenic', 'jeckapecka1@gmail.com', 0, 1),
+(22, 'Jelena', 'Jelenic', 'jeckapecka1@gmail.com', 0, 0),
 (23, 'Marijana', 'Marijanovic', 'marijanamarijana131@gmail.com', 0, 0),
 (24, 'Isidora', 'Isidoric', 'isidoraisidoric@gmail.com', 0, 0),
-(30, 'Email', 'Emailic', 'marijalalic@hotmail.rs', 0, 1),
+(30, 'Email', 'Emailic', 'marijalalic@hotmail.rs', 0, 0),
 (34, 'Martina', 'Markovic', 'martinamarkovic998@gmail.com', 3, 0);
 
 -- --------------------------------------------------------
@@ -122,7 +122,7 @@ INSERT INTO `komentar` (`idKomentara`, `tekstKomentara`, `idKKom`) VALUES
 (2, 'Jos jednom da kažem kako kida! Vrh!', 8),
 (3, 'Znači kida.', 8),
 (4, 'Smatram da Vas sajt sadrzi previse ljubicaste', 14),
-(5, 'Im so fucking tired. ', 30),
+(5, 'Zadovoljna sam.', 30),
 (6, 'Pozdrav za administratora. Cmok! ', 8);
 
 -- --------------------------------------------------------
@@ -165,7 +165,7 @@ INSERT INTO `korisnik` (`idKorisnika`, `username`, `password`, `uloga`, `obrisan
 (19, 'dinosaurus21', '123456', 'igrac', 0),
 (20, 'dule_232', '123456', 'igrac', 0),
 (21, 'dijamant_margarin232', '123456', 'igrac', 0),
-(22, 'jk_diva123', '123456', 'igrac', 1),
+(22, 'jk_diva123', '123456', 'igrac', 0),
 (23, 'zrela_lubenica', '123456', 'igrac', 0),
 (24, 'isidora11', '123456', 'igrac', 0),
 (25, 'miroslav232', '123456', 'moderator', 0),
@@ -174,7 +174,7 @@ INSERT INTO `korisnik` (`idKorisnika`, `username`, `password`, `uloga`, `obrisan
 (28, 'mitarmitro23', '123456', 'moderator', 0),
 (29, 'goks23goks', '123456', 'moderator', 0),
 (30, 'email_test123', '123456', 'igrac', 0),
-(31, 'dzoni111', '123456', 'moderator', 1),
+(31, 'dzoni111', '123456', 'moderator', 0),
 (34, 'marti', 'ajica', 'igrac', 0),
 (35, 'admin', 'admin123', 'admin', 0);
 
@@ -485,7 +485,8 @@ CREATE TABLE `rezultati` (
 
 INSERT INTO `rezultati` (`idrezultati`, `poeni`, `datum`, `idKRez`) VALUES
 (1, 6, '2020-05-29', 8),
-(2, 3, '2020-05-30', 34);
+(2, 3, '2020-05-30', 34),
+(3, 7, '2020-06-01', 8);
 
 -- --------------------------------------------------------
 
@@ -633,7 +634,7 @@ ALTER TABLE `preporuka`
 -- AUTO_INCREMENT for table `rezultati`
 --
 ALTER TABLE `rezultati`
-  MODIFY `idrezultati` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idrezultati` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `zahtevmoderatora`
