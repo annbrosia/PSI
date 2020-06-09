@@ -3849,7 +3849,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="DiagramOwner">CpW8x/5/x0mT0eRFWjLX8AAA</XPD:REF>
 <XPD:OBJ name="DiagramView" type="UMLSequenceDiagramView" guid="Zg2s82duGU6SqcdtYnWEiwAA">
 <XPD:REF name="Diagram">Jo0u9U5BbUquGCruV+21QgAA</XPD:REF>
-<XPD:ATTR name="#OwnedViews" type="integer">20</XPD:ATTR>
+<XPD:ATTR name="#OwnedViews" type="integer">24</XPD:ATTR>
 <XPD:OBJ name="OwnedViews[0]" type="UMLSeqObjectView" guid="nlHt+cSme0Slh6I4wnQzwgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
@@ -4027,7 +4027,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:ATTR name="Left" type="integer">287</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">148</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">145</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">209</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
 <XPD:OBJ name="OwnedViews[7]" type="UMLSeqStimulusView" guid="dwXlXhA9s0Ota2t9G16xEQAA">
@@ -4249,11 +4249,157 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[13]" type="UMLSeqStimulusView" guid="TSxrF2eyx0+nkO4QHzG5awAA">
+<XPD:OBJ name="OwnedViews[13]" type="UMLSeqStimulusView" guid="uxPsvMOHgkyJK78gOVUlcwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">287,275;92,275</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">300,271;468,271</XPD:ATTR>
+<XPD:REF name="Model">dc/BqgK+f0+ek+oM0F0QIAAA</XPD:REF>
+<XPD:REF name="Head">UPfygmt6CEySZ35sv7k0EwAA</XPD:REF>
+<XPD:REF name="Tail">zEraVhkaxU6Jo2RbAUkA5wAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="rIgguT/0zUy281NJetS7GQAA">
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">promijeniLozinku()</XPD:ATTR>
+<XPD:REF name="Model">dc/BqgK+f0+ek+oM0F0QIAAA</XPD:REF>
+<XPD:REF name="HostEdge">uxPsvMOHgkyJK78gOVUlcwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="XSYpX47ij02DThbrhUmS0wAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:REF name="Model">dc/BqgK+f0+ek+oM0F0QIAAA</XPD:REF>
+<XPD:REF name="HostEdge">uxPsvMOHgkyJK78gOVUlcwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="O9RA98kzKEm+Bee0SnO+4gAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">dc/BqgK+f0+ek+oM0F0QIAAA</XPD:REF>
+<XPD:REF name="HostEdge">uxPsvMOHgkyJK78gOVUlcwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Activation" type="UMLActivationView" guid="C6vXhQIJ4UiCyfFGlWBvJwAA">
+<XPD:ATTR name="Left" type="integer">468</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">271</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">54</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[14]" type="UMLSeqStimulusView" guid="IHDkOSiLf0y4exFd2mSowAAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">481,276;622,276</XPD:ATTR>
+<XPD:REF name="Model">uq8Hw5+Be0ODDMEDiY4tSQAA</XPD:REF>
+<XPD:REF name="Head">RUZGBNgMeUyZl7Wkahv7mgAA</XPD:REF>
+<XPD:REF name="Tail">UPfygmt6CEySZ35sv7k0EwAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="Tt4IZFWeOk6pdqtCEb6+FwAA">
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">promijeniLozinku()</XPD:ATTR>
+<XPD:REF name="Model">uq8Hw5+Be0ODDMEDiY4tSQAA</XPD:REF>
+<XPD:REF name="HostEdge">IHDkOSiLf0y4exFd2mSowAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="V3odbSjFdky7QimFe3SJBAAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:REF name="Model">uq8Hw5+Be0ODDMEDiY4tSQAA</XPD:REF>
+<XPD:REF name="HostEdge">IHDkOSiLf0y4exFd2mSowAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="r6BCW4N55ku5dbr6s2ZoMQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">uq8Hw5+Be0ODDMEDiY4tSQAA</XPD:REF>
+<XPD:REF name="HostEdge">IHDkOSiLf0y4exFd2mSowAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Activation" type="UMLActivationView" guid="P9Qd96eEuEmhcgPsK0ix6QAA">
+<XPD:ATTR name="Left" type="integer">622</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">276</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[15]" type="UMLSeqStimulusView" guid="ynS+JkXwTkSP8Jgf8Et+HQAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">622,292;481,292</XPD:ATTR>
+<XPD:REF name="Model">HNSf8O/5KUy/J8dFButLkQAA</XPD:REF>
+<XPD:REF name="Head">UPfygmt6CEySZ35sv7k0EwAA</XPD:REF>
+<XPD:REF name="Tail">RUZGBNgMeUyZl7Wkahv7mgAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="B8xavOBHYECUxyLRk9AopQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">HNSf8O/5KUy/J8dFButLkQAA</XPD:REF>
+<XPD:REF name="HostEdge">ynS+JkXwTkSP8Jgf8Et+HQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="MRL0w0rWDUaBpiQ3AkNEVgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:REF name="Model">HNSf8O/5KUy/J8dFButLkQAA</XPD:REF>
+<XPD:REF name="HostEdge">ynS+JkXwTkSP8Jgf8Et+HQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="pFzxADFmekuB/ReH9aqshwAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">HNSf8O/5KUy/J8dFButLkQAA</XPD:REF>
+<XPD:REF name="HostEdge">ynS+JkXwTkSP8Jgf8Et+HQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Activation" type="UMLActivationView" guid="zL/hUEwxMEeJxXkbql7HngAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">468</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">292</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[16]" type="UMLSeqStimulusView" guid="7jYM/XV3B020bKd05J3jAwAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">468,316;300,316</XPD:ATTR>
+<XPD:REF name="Model">Wkh0fSscxU6c/2g6aKo7CgAA</XPD:REF>
+<XPD:REF name="Head">zEraVhkaxU6Jo2RbAUkA5wAA</XPD:REF>
+<XPD:REF name="Tail">UPfygmt6CEySZ35sv7k0EwAA</XPD:REF>
+<XPD:OBJ name="NameLabel" type="EdgeLabelView" guid="MaKS64KhNEiehT1hPgCxpQAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">Wkh0fSscxU6c/2g6aKo7CgAA</XPD:REF>
+<XPD:REF name="HostEdge">7jYM/XV3B020bKd05J3jAwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="StereotypeLabel" type="EdgeLabelView" guid="oZ0CKMZttEq5NaoiOPoLWgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
+<XPD:REF name="Model">Wkh0fSscxU6c/2g6aKo7CgAA</XPD:REF>
+<XPD:REF name="HostEdge">7jYM/XV3B020bKd05J3jAwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="PropertyLabel" type="EdgeLabelView" guid="0VLwt1Ctw0axT6gcpufkDgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Alpha" type="real">-1,5707963267949</XPD:ATTR>
+<XPD:ATTR name="Distance" type="real">10</XPD:ATTR>
+<XPD:REF name="Model">Wkh0fSscxU6c/2g6aKo7CgAA</XPD:REF>
+<XPD:REF name="HostEdge">7jYM/XV3B020bKd05J3jAwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Activation" type="UMLActivationView" guid="xhMwifqh5kW8kg1T5Zb3HgAA">
+<XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">287</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">316</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedViews[17]" type="UMLSeqStimulusView" guid="TSxrF2eyx0+nkO4QHzG5awAA">
+<XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
+<XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
+<XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">287,330;92,330</XPD:ATTR>
 <XPD:REF name="Model">UgisMPBzY02xpLQvOTOZZQAA</XPD:REF>
 <XPD:REF name="Head">frR+4CanIk6a0mLcg+u8bQAA</XPD:REF>
 <XPD:REF name="Tail">zEraVhkaxU6Jo2RbAUkA5wAA</XPD:REF>
@@ -4281,12 +4427,12 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="u5L4cjUGTE25nIqga7oZfgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">92</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">275</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">330</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[14]" type="UMLSeqStimulusView" guid="y1xv7TgLUU+abSvwMH0DoAAA">
+<XPD:OBJ name="OwnedViews[18]" type="UMLSeqStimulusView" guid="y1xv7TgLUU+abSvwMH0DoAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -4322,7 +4468,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:ATTR name="Height" type="integer">53</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[15]" type="UMLSeqStimulusView" guid="TJtybIQheECrwX+LX/eLfQAA">
+<XPD:OBJ name="OwnedViews[19]" type="UMLSeqStimulusView" guid="TJtybIQheECrwX+LX/eLfQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -4358,7 +4504,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:ATTR name="Height" type="integer">52</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[16]" type="UMLSeqStimulusView" guid="5LJAiEVNwUyclDUcOvsXNAAA">
+<XPD:OBJ name="OwnedViews[20]" type="UMLSeqStimulusView" guid="5LJAiEVNwUyclDUcOvsXNAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -4394,7 +4540,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[17]" type="UMLSeqStimulusView" guid="8CxVC56h60iTMB+97LLQkgAA">
+<XPD:OBJ name="OwnedViews[21]" type="UMLSeqStimulusView" guid="8CxVC56h60iTMB+97LLQkgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -4431,7 +4577,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[18]" type="UMLSeqStimulusView" guid="v2UHWbMSPkCuuOM5cxYPOAAA">
+<XPD:OBJ name="OwnedViews[22]" type="UMLSeqStimulusView" guid="v2UHWbMSPkCuuOM5cxYPOAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -4468,7 +4614,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:ATTR name="Height" type="integer">29</XPD:ATTR>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:OBJ name="OwnedViews[19]" type="UMLSeqStimulusView" guid="39UHahuqUk62xsGma5PsxwAA">
+<XPD:OBJ name="OwnedViews[23]" type="UMLSeqStimulusView" guid="39UHahuqUk62xsGma5PsxwAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
@@ -4507,7 +4653,7 @@ treba da unese svoj email da bi nastavio dalje
 </XPD:OBJ>
 </XPD:OBJ>
 </XPD:OBJ>
-<XPD:ATTR name="#ParticipatingStimuli" type="integer">14</XPD:ATTR>
+<XPD:ATTR name="#ParticipatingStimuli" type="integer">18</XPD:ATTR>
 <XPD:OBJ name="ParticipatingStimuli[0]" type="UMLStimulus" guid="rMeBDdK9RUSKFPG+FAuh0AAA">
 <XPD:ATTR name="Name" type="string">unesi_mail</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">mail</XPD:ATTR>
@@ -4609,7 +4755,61 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[2]">RjfJK1s8lUWhkmei+RBNSwAA</XPD:REF>
 <XPD:REF name="Views[3]">+UhR6r3+6USpevY8uhJr2QAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="UgisMPBzY02xpLQvOTOZZQAA">
+<XPD:OBJ name="ParticipatingStimuli[7]" type="UMLStimulus" guid="dc/BqgK+f0+ek+oM0F0QIAAA">
+<XPD:ATTR name="Name" type="string">promijeniLozinku</XPD:ATTR>
+<XPD:REF name="Sender">GZzz6zewzEmIP7KrCc2wGgAA</XPD:REF>
+<XPD:REF name="Receiver">7YEOYX7pSkSmPlrhMTilpgAA</XPD:REF>
+<XPD:OBJ name="Action" type="UMLCallAction" guid="wbAkkP3/a0WQ3L6MK/fjrAAA">
+<XPD:REF name="Stimulus">dc/BqgK+f0+ek+oM0F0QIAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:REF name="InteractionInstanceSet">CpW8x/5/x0mT0eRFWjLX8AAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">uxPsvMOHgkyJK78gOVUlcwAA</XPD:REF>
+<XPD:REF name="Views[1]">rIgguT/0zUy281NJetS7GQAA</XPD:REF>
+<XPD:REF name="Views[2]">XSYpX47ij02DThbrhUmS0wAA</XPD:REF>
+<XPD:REF name="Views[3]">O9RA98kzKEm+Bee0SnO+4gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingStimuli[8]" type="UMLStimulus" guid="uq8Hw5+Be0ODDMEDiY4tSQAA">
+<XPD:ATTR name="Name" type="string">promijeniLozinku</XPD:ATTR>
+<XPD:REF name="Sender">7YEOYX7pSkSmPlrhMTilpgAA</XPD:REF>
+<XPD:REF name="Receiver">rF/Lqi/rfEubbrOha1iWwgAA</XPD:REF>
+<XPD:OBJ name="Action" type="UMLCallAction" guid="ME9wCh5P20qeK5lFvQj2LAAA">
+<XPD:REF name="Stimulus">uq8Hw5+Be0ODDMEDiY4tSQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:REF name="InteractionInstanceSet">CpW8x/5/x0mT0eRFWjLX8AAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">IHDkOSiLf0y4exFd2mSowAAA</XPD:REF>
+<XPD:REF name="Views[1]">Tt4IZFWeOk6pdqtCEb6+FwAA</XPD:REF>
+<XPD:REF name="Views[2]">V3odbSjFdky7QimFe3SJBAAA</XPD:REF>
+<XPD:REF name="Views[3]">r6BCW4N55ku5dbr6s2ZoMQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingStimuli[9]" type="UMLStimulus" guid="HNSf8O/5KUy/J8dFButLkQAA">
+<XPD:REF name="Sender">rF/Lqi/rfEubbrOha1iWwgAA</XPD:REF>
+<XPD:REF name="Receiver">7YEOYX7pSkSmPlrhMTilpgAA</XPD:REF>
+<XPD:OBJ name="Action" type="UMLReturnAction" guid="3jB1hqV+z0C5YBTEHnX5/wAA">
+<XPD:REF name="Stimulus">HNSf8O/5KUy/J8dFButLkQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:REF name="InteractionInstanceSet">CpW8x/5/x0mT0eRFWjLX8AAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">ynS+JkXwTkSP8Jgf8Et+HQAA</XPD:REF>
+<XPD:REF name="Views[1]">B8xavOBHYECUxyLRk9AopQAA</XPD:REF>
+<XPD:REF name="Views[2]">MRL0w0rWDUaBpiQ3AkNEVgAA</XPD:REF>
+<XPD:REF name="Views[3]">pFzxADFmekuB/ReH9aqshwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingStimuli[10]" type="UMLStimulus" guid="Wkh0fSscxU6c/2g6aKo7CgAA">
+<XPD:REF name="Sender">7YEOYX7pSkSmPlrhMTilpgAA</XPD:REF>
+<XPD:REF name="Receiver">GZzz6zewzEmIP7KrCc2wGgAA</XPD:REF>
+<XPD:OBJ name="Action" type="UMLReturnAction" guid="C8UAEkEn0kCWGDx/z70DrAAA">
+<XPD:REF name="Stimulus">Wkh0fSscxU6c/2g6aKo7CgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:REF name="InteractionInstanceSet">CpW8x/5/x0mT0eRFWjLX8AAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">7jYM/XV3B020bKd05J3jAwAA</XPD:REF>
+<XPD:REF name="Views[1]">MaKS64KhNEiehT1hPgCxpQAA</XPD:REF>
+<XPD:REF name="Views[2]">oZ0CKMZttEq5NaoiOPoLWgAA</XPD:REF>
+<XPD:REF name="Views[3]">0VLwt1Ctw0axT6gcpufkDgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="ParticipatingStimuli[11]" type="UMLStimulus" guid="UgisMPBzY02xpLQvOTOZZQAA">
 <XPD:ATTR name="Name" type="string">Poruka: Uspjesno poslat</XPD:ATTR>
 <XPD:REF name="Sender">GZzz6zewzEmIP7KrCc2wGgAA</XPD:REF>
 <XPD:REF name="Receiver">IcZPpZKnREuOw8JKLm0ZdQAA</XPD:REF>
@@ -4623,7 +4823,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[2]">Tm5fag+1jkCK1OsGJGtn5gAA</XPD:REF>
 <XPD:REF name="Views[3]">03AcvXutj0u9swsK8z0HAQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[8]" type="UMLStimulus" guid="QXJEJGMi4U+Xtv0IyNEr/wAA">
+<XPD:OBJ name="ParticipatingStimuli[12]" type="UMLStimulus" guid="QXJEJGMi4U+Xtv0IyNEr/wAA">
 <XPD:ATTR name="Name" type="string">novalozinka</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">lozinka1,lozinka2</XPD:ATTR>
 <XPD:REF name="Sender">IcZPpZKnREuOw8JKLm0ZdQAA</XPD:REF>
@@ -4638,7 +4838,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[2]">/R523DZ+aEqIkZWtDt+AXwAA</XPD:REF>
 <XPD:REF name="Views[3]">dkU6fiNYRkWSnOEHEHOdPQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[9]" type="UMLStimulus" guid="xwLLm13DykmrbC/yEC2+8wAA">
+<XPD:OBJ name="ParticipatingStimuli[13]" type="UMLStimulus" guid="xwLLm13DykmrbC/yEC2+8wAA">
 <XPD:ATTR name="Name" type="string">novalozinka</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">lozinka1,lozinka2</XPD:ATTR>
 <XPD:REF name="Sender">JWe+qlmjGE+RlOglTYyo2QAA</XPD:REF>
@@ -4653,7 +4853,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[2]">S8LkpbmKWkWhEZ5lwFAcfwAA</XPD:REF>
 <XPD:REF name="Views[3]">gwA2V532VEK0Vh/VDZ3h3wAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[10]" type="UMLStimulus" guid="p47tOCxx7UmyijjpQKvm5wAA">
+<XPD:OBJ name="ParticipatingStimuli[14]" type="UMLStimulus" guid="p47tOCxx7UmyijjpQKvm5wAA">
 <XPD:ATTR name="Name" type="string">novalozinka</XPD:ATTR>
 <XPD:ATTR name="Arguments" type="string">lozinka1,lozinka2</XPD:ATTR>
 <XPD:REF name="Sender">7YEOYX7pSkSmPlrhMTilpgAA</XPD:REF>
@@ -4668,7 +4868,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[2]">CkUBj0QcVUGcrGugbAzlIAAA</XPD:REF>
 <XPD:REF name="Views[3]">Rd9zf9OaSUm2oEaOA/yx7wAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[11]" type="UMLStimulus" guid="kDwPEGjUk0GYEn+5QEmyiQAA">
+<XPD:OBJ name="ParticipatingStimuli[15]" type="UMLStimulus" guid="kDwPEGjUk0GYEn+5QEmyiQAA">
 <XPD:ATTR name="Name" type="string">affected row</XPD:ATTR>
 <XPD:REF name="Sender">rF/Lqi/rfEubbrOha1iWwgAA</XPD:REF>
 <XPD:REF name="Receiver">7YEOYX7pSkSmPlrhMTilpgAA</XPD:REF>
@@ -4682,7 +4882,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[2]">VKr5VehHv020x8Rig3P4XQAA</XPD:REF>
 <XPD:REF name="Views[3]">jigNQ+yu6UyQLUQi6Ow+KwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[12]" type="UMLStimulus" guid="OWgHTbX9yE+BKHm28SVzxwAA">
+<XPD:OBJ name="ParticipatingStimuli[16]" type="UMLStimulus" guid="OWgHTbX9yE+BKHm28SVzxwAA">
 <XPD:ATTR name="Name" type="string">Nova lozinka je sacuvana</XPD:ATTR>
 <XPD:REF name="Sender">7YEOYX7pSkSmPlrhMTilpgAA</XPD:REF>
 <XPD:REF name="Receiver">JWe+qlmjGE+RlOglTYyo2QAA</XPD:REF>
@@ -4696,7 +4896,7 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[2]">J9tzFCRr7UqJ0+VyhTtXjgAA</XPD:REF>
 <XPD:REF name="Views[3]">UwtDP/OWuEiUAbl+XIbYdQAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="ParticipatingStimuli[13]" type="UMLStimulus" guid="Q3wvkGvCDUq94pyNtS3ZfQAA">
+<XPD:OBJ name="ParticipatingStimuli[17]" type="UMLStimulus" guid="Q3wvkGvCDUq94pyNtS3ZfQAA">
 <XPD:ATTR name="Name" type="string">Nova lozinka je sacuvana</XPD:ATTR>
 <XPD:REF name="Sender">JWe+qlmjGE+RlOglTYyo2QAA</XPD:REF>
 <XPD:REF name="Receiver">IcZPpZKnREuOw8JKLm0ZdQAA</XPD:REF>
@@ -5155,18 +5355,20 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[1]">zEraVhkaxU6Jo2RbAUkA5wAA</XPD:REF>
 <XPD:REF name="Views[2]">2t9HosHr3ku1tVX7TJc7MwAA</XPD:REF>
 <XPD:REF name="Views[3]">DjFCn8sfC0yP6M5p6UIuxwAA</XPD:REF>
-<XPD:ATTR name="#SendingStimuli" type="integer">5</XPD:ATTR>
+<XPD:ATTR name="#SendingStimuli" type="integer">6</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">PJezKEGEUUuBT+TU25/qZAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[1]">UgisMPBzY02xpLQvOTOZZQAA</XPD:REF>
 <XPD:REF name="SendingStimuli[2]">6ulH2uayLE+XD5Vx7CDcbwAA</XPD:REF>
 <XPD:REF name="SendingStimuli[3]">Qza+4Une7EuSs9Or01u3tAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[4]">f0iXBrNgok+bIfuQl5SPRQAA</XPD:REF>
-<XPD:ATTR name="#ReceivingStimuli" type="integer">5</XPD:ATTR>
+<XPD:REF name="SendingStimuli[5]">dc/BqgK+f0+ek+oM0F0QIAAA</XPD:REF>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">6</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">rMeBDdK9RUSKFPG+FAuh0AAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">01E6jQmKNkK9vwlInW2zmAAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[2]">8KYiq0VyxEi5IkmjpIzvOwAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[3]">psLiKBpKzkmgnL/77TOEFQAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[4]">VRbtU1G/GECkvPLE9N3HUwAA</XPD:REF>
+<XPD:REF name="ReceivingStimuli[5]">Wkh0fSscxU6c/2g6aKo7CgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[2]" type="UMLObject" guid="7YEOYX7pSkSmPlrhMTilpgAA">
 <XPD:REF name="Classifier">+sgjW7bzMU2oBMUtoY3SbwAA</XPD:REF>
@@ -5176,20 +5378,24 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[1]">UPfygmt6CEySZ35sv7k0EwAA</XPD:REF>
 <XPD:REF name="Views[2]">RbstQyUimUa2Ev/Zy75nOwAA</XPD:REF>
 <XPD:REF name="Views[3]">Ot5w/d6FF0W3gipwOrsgDwAA</XPD:REF>
-<XPD:ATTR name="#SendingStimuli" type="integer">6</XPD:ATTR>
+<XPD:ATTR name="#SendingStimuli" type="integer">8</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">dCDL1wtk3UOioV41J1xNnQAA</XPD:REF>
 <XPD:REF name="SendingStimuli[1]">01E6jQmKNkK9vwlInW2zmAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[2]">46xwVk1X40KwjZXojNSkZAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[3]">psLiKBpKzkmgnL/77TOEFQAA</XPD:REF>
 <XPD:REF name="SendingStimuli[4]">p47tOCxx7UmyijjpQKvm5wAA</XPD:REF>
 <XPD:REF name="SendingStimuli[5]">OWgHTbX9yE+BKHm28SVzxwAA</XPD:REF>
-<XPD:ATTR name="#ReceivingStimuli" type="integer">6</XPD:ATTR>
+<XPD:REF name="SendingStimuli[6]">uq8Hw5+Be0ODDMEDiY4tSQAA</XPD:REF>
+<XPD:REF name="SendingStimuli[7]">Wkh0fSscxU6c/2g6aKo7CgAA</XPD:REF>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">8</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">PJezKEGEUUuBT+TU25/qZAAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">RayYIyVjqUm5Bc6cUNBdAAAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[2]">6ulH2uayLE+XD5Vx7CDcbwAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[3]">Hs5ZiwpBqEOfUh9iT2jXQQAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[4]">xwLLm13DykmrbC/yEC2+8wAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[5]">kDwPEGjUk0GYEn+5QEmyiQAA</XPD:REF>
+<XPD:REF name="ReceivingStimuli[6]">dc/BqgK+f0+ek+oM0F0QIAAA</XPD:REF>
+<XPD:REF name="ReceivingStimuli[7]">HNSf8O/5KUy/J8dFButLkQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[3]" type="UMLObject" guid="rF/Lqi/rfEubbrOha1iWwgAA">
 <XPD:REF name="Classifier">pcvvath0pUmK80cRGKM/JwAA</XPD:REF>
@@ -5199,14 +5405,16 @@ treba da unese svoj email da bi nastavio dalje
 <XPD:REF name="Views[1]">RUZGBNgMeUyZl7Wkahv7mgAA</XPD:REF>
 <XPD:REF name="Views[2]">BPXNlV5TVU2Yv2H5fVQ0IgAA</XPD:REF>
 <XPD:REF name="Views[3]">eQq59MBljU+snvzLFCiprgAA</XPD:REF>
-<XPD:ATTR name="#SendingStimuli" type="integer">3</XPD:ATTR>
+<XPD:ATTR name="#SendingStimuli" type="integer">4</XPD:ATTR>
 <XPD:REF name="SendingStimuli[0]">RayYIyVjqUm5Bc6cUNBdAAAA</XPD:REF>
 <XPD:REF name="SendingStimuli[1]">Hs5ZiwpBqEOfUh9iT2jXQQAA</XPD:REF>
 <XPD:REF name="SendingStimuli[2]">kDwPEGjUk0GYEn+5QEmyiQAA</XPD:REF>
-<XPD:ATTR name="#ReceivingStimuli" type="integer">3</XPD:ATTR>
+<XPD:REF name="SendingStimuli[3]">HNSf8O/5KUy/J8dFButLkQAA</XPD:REF>
+<XPD:ATTR name="#ReceivingStimuli" type="integer">4</XPD:ATTR>
 <XPD:REF name="ReceivingStimuli[0]">dCDL1wtk3UOioV41J1xNnQAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[1]">46xwVk1X40KwjZXojNSkZAAA</XPD:REF>
 <XPD:REF name="ReceivingStimuli[2]">p47tOCxx7UmyijjpQKvm5wAA</XPD:REF>
+<XPD:REF name="ReceivingStimuli[3]">uq8Hw5+Be0ODDMEDiY4tSQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="ParticipatingInstances[4]" type="UMLObject" guid="G2a7U/9c1kuAHF0jTwIBSgAA">
 <XPD:ATTR name="Name" type="string">SendMail</XPD:ATTR>
